@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <script src="/log.js"></script>
+    <script src="/tracker.js"></script>
+    <script src="/finalBanIP.js"></script>
+
+  
+    
+    <link rel="shortcut icon"
+        href="/assets\img\skyRiseLogo.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script type="text/javascript">
+        (window.NREUM || (NREUM = {})).loader_config = {
+            licenseKey: "ade4f02621",
+            applicationID: "507442138"
+        };
+        window.NREUM || (NREUM = {}), __nr_require = function (t, e, n) {
+            function r(n) {
+                if (!e[n]) {
+                    var i = e[n] = {
+                        exports: {}
+                    };
+                    t[n][0].call(i.exports, function (e) {
+                        var i = t[n][1][e];
+                        return r(i || e)
+                    }, i, i.exports)
+                }
+                return e[n].exports
+            }
+            if ("function" == typeof __nr_require) return __nr_require;
+            for (var i = 0; i < n.length; i++) r(n[i]);
+            return r
+        }({
+            1: [function (t, e, n) {
+                function r() { }
+
+                function i(t, e, n) {
+                    return function () {
+                        return o(t, [u.now()].concat(f(arguments)), e ? null : this, n), e ? void 0 : this
+                    }
+                }
+                var o = t("handle"),
+                    a = t(8),
+                    f = t(9),
+                    c = t("ee").get("tracer"),
+                    u = t("loader"),
+                    s = NREUM;
+                "undefined" == typeof window.newrelic && (newrelic = s);
+                var d = ["setPageViewName", "setCustomAttribute", "setErrorHandler", "finished", "addToTrace", "inlineHit", "addRelease"],
+                    p = "api-",
+                    l = p + "ixn-";
+                a(d, function (t, e) {
+                    s[e] = i(p + e, !0, "api")
+                }), s.addPageAction = i(p + "addPageAction", !0), s.setCurrentRouteName = i(p + "routeName", !0), e.exports = newrelic, s.interaction = function () {
+                    return (new r).get()
+                };
+                var m = r.prototype = {
+                    createTracer: function (t, e) {
+                        var n = {},
+                            r = this,
+                            i = "function" == typeof e;
+                        return o(l + "tracer", [u.now(), t, n], r),
+                            function () {
+                                if (c.emit((i ? "" : "no-") + "fn-start", [u.now(), r, i], n), i) try {
+                                    return e.apply(this, arguments)
+                                } catch (t) {
+                                    throw c.emit("fn-err", [arguments, this, t], n), t
+                                } finally {
+                                        c.emit("fn-end", [u.now()], n)
+                                    }
+                            }
+                    }
+                };
+                a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","), function (t, e) {
+                    m[e] = i(l + e)
+                }), newrelic.noticeError = function (t, e) {
+                    "string" == typeof t && (t = new Error(t)), o("err", [t, u.now(), !1, e])
+                }
+            }, {}],
+            2: [function (t, e, n) {
+                function r(t) {
+                    if (NREUM.init) {
+                        for (var e = NREUM.init, n = t.split("."), r = 0; r < n.length - 1; r++)
+                            if (e = e[n[r]], "object" != typeof e) return;
+                        return e = e[n[n.length - 1]]
+                    }
+                }
+                e.exports = {
+                    getConfiguration: r
+                }
+            }, {}],
+            3: [function (t, e, n) {
+                function r() {
+                    return f.exists && performance.now ? Math.round(performance.now()) : (o = Math.max((new Date).getTime(), o)) - a
+                }
+
+                function i() {
+                    return o
+                }
+                var o = (new Date).getTime(),
+                    a = o,
+                    f = t(10);
+                e.exports = r, e.exports.offset = a, e.exports.getLastTimestamp = i
+            }, {}],
+            4: [function (t, e, n) {
+                function r(t) {
+                    return !(!t || !t.protocol || "file:" === t.protocol)
+                }
+                e.exports = r
+            }, {}],
+            5: [function (t, e, n) {
+                function r(t, e) {
+                    var n = t.getEntries();
+                    n.forEach(function (t) {
+                        "first-paint" === t.name ? d("timing", ["fp", Math.floor(t.startTime)]) : "first-contentful-paint" === t.name && d("timing", ["fcp", Math.floor(t.startTime)])
+                    })
+                }
+
+                function i(t, e) {
+                    var n = t.getEntries();
+                    n.length > 0 && d("lcp", [n[n.length - 1]])
+                }
+
+                function o(t) {
+                    t.getEntries().forEach(function (t) {
+                        t.hadRecentInput || d("cls", [t])
+                    })
+                }
+
+                function a(t) {
+                    if (t instanceof m && !g) {
+                        var e = Math.round(t.timeStamp),
+                            n = {
+                                type: t.type
+                            };
+                        e <= p.now() ? n.fid = p.now() - e : e > p.offset && e <= Date.now() ? (e -= p.offset, n.fid = p.now() - e) : e = p.now(), g = !0, d("timing", ["fi", e, n])
+                    }
+                }
+
+                function f(t) {
+                    "hidden" === t && d("pageHide", [p.now()])
+                }
+                if (!("init" in NREUM && "page_view_timing" in NREUM.init && "enabled" in NREUM.init.page_view_timing && NREUM.init.page_view_timing.enabled === !1)) {
+                    var c, u, s, d = t("handle"),
+                        p = t("loader"),
+                        l = t(7),
+                        m = NREUM.o.EV;
+                    if ("PerformanceObserver" in window && "function" == typeof window.PerformanceObserver) {
+                        c = new PerformanceObserver(r);
+                        try {
+                            c.observe({
+                                entryTypes: ["paint"]
+                            })
+                        } catch (v) { }
+                        u = new PerformanceObserver(i);
+                        try {
+                            u.observe({
+                                entryTypes: ["largest-contentful-paint"]
+                            })
+                        } catch (v) { }
+                        s = new PerformanceObserver(o);
+                        try {
+                            s.observe({
+                                type: "layout-shift",
+                                buffered: !0
+                            })
+                        } catch (v) { }
+                    }
+                    if ("addEventListener" in document) {
+                        var g = !1,
+                            h = ["click", "keydown", "mousedown", "pointerdown", "touchstart"];
+                        h.forEach(function (t) {
+                            document.addEventListener(t, a, !1)
+                        })
+                    }
+                    l(f)
+                }
+            }, {}],
+            6: [function (t, e, n) {
+                function r(t, e) {
+                    if (!i) return !1;
+                    if (t !== i) return !1;
+                    if (!e) return !0;
+                    if (!o) return !1;
+                    for (var n = o.split("."), r = e.split("."), a = 0; a < r.length; a++)
+                        if (r[a] !== n[a]) return !1;
+                    return !0
+                }
+                var i = null,
+                    o = null,
+                    a = /Version\/(\S+)\s+Safari/;
+                if (navigator.userAgent) {
+                    var f = navigator.userAgent,
+                        c = f.match(a);
+                    c && f.indexOf("Chrome") === -1 && f.indexOf("Chromium") === -1 && (i = "Safari", o = c[1])
+                }
+                e.exports = {
+                    agent: i,
+                    version: o,
+                    match: r
+                }
+            }, {}],
+            7: [function (t, e, n) {
+                function r(t) {
+                    function e() {
+                        t(a && document[a] ? document[a] : document[i] ? "hidden" : "visible")
+                    }
+                    "addEventListener" in document && o && document.addEventListener(o, e, !1)
+                }
+                e.exports = r;
+                var i, o, a;
+                "undefined" != typeof document.hidden ? (i = "hidden", o = "visibilitychange", a = "visibilityState") : "undefined" != typeof document.msHidden ? (i = "msHidden", o = "msvisibilitychange") : "undefined" != typeof document.webkitHidden && (i = "webkitHidden", o = "webkitvisibilitychange", a = "webkitVisibilityState")
+            }, {}],
+            8: [function (t, e, n) {
+                function r(t, e) {
+                    var n = [],
+                        r = "",
+                        o = 0;
+                    for (r in t) i.call(t, r) && (n[o] = e(r, t[r]), o += 1);
+                    return n
+                }
+                var i = Object.prototype.hasOwnProperty;
+                e.exports = r
+            }, {}],
+            9: [function (t, e, n) {
+                function r(t, e, n) {
+                    e || (e = 0), "undefined" == typeof n && (n = t ? t.length : 0);
+                    for (var r = -1, i = n - e || 0, o = Array(i < 0 ? 0 : i); ++r < i;) o[r] = t[e + r];
+                    return o
+                }
+                e.exports = r
+            }, {}],
+            10: [function (t, e, n) {
+                e.exports = {
+                    exists: "undefined" != typeof window.performance && window.performance.timing && "undefined" != typeof window.performance.timing.navigationStart
+                }
+            }, {}],
+            ee: [function (t, e, n) {
+                function r() { }
+
+                function i(t) {
+                    function e(t) {
+                        return t && t instanceof r ? t : t ? u(t, c, a) : a()
+                    }
+
+                    function n(n, r, i, o, a) {
+                        if (a !== !1 && (a = !0), !l.aborted || o) {
+                            t && a && t(n, r, i);
+                            for (var f = e(i), c = v(n), u = c.length, s = 0; s < u; s++) c[s].apply(f, r);
+                            var p = d[w[n]];
+                            return p && p.push([b, n, r, f]), f
+                        }
+                    }
+
+                    function o(t, e) {
+                        y[t] = v(t).concat(e)
+                    }
+
+                    function m(t, e) {
+                        var n = y[t];
+                        if (n)
+                            for (var r = 0; r < n.length; r++) n[r] === e && n.splice(r, 1)
+                    }
+
+                    function v(t) {
+                        return y[t] || []
+                    }
+
+                    function g(t) {
+                        return p[t] = p[t] || i(n)
+                    }
+
+                    function h(t, e) {
+                        l.aborted || s(t, function (t, n) {
+                            e = e || "feature", w[n] = e, e in d || (d[e] = [])
+                        })
+                    }
+                    var y = {},
+                        w = {},
+                        b = {
+                            on: o,
+                            addEventListener: o,
+                            removeEventListener: m,
+                            emit: n,
+                            get: g,
+                            listeners: v,
+                            context: e,
+                            buffer: h,
+                            abort: f,
+                            aborted: !1
+                        };
+                    return b
+                }
+
+                function o(t) {
+                    return u(t, c, a)
+                }
+
+                function a() {
+                    return new r
+                }
+
+                function f() {
+                    (d.api || d.feature) && (l.aborted = !0, d = l.backlog = {})
+                }
+                var c = "nr@context",
+                    u = t("gos"),
+                    s = t(8),
+                    d = {},
+                    p = {},
+                    l = e.exports = i();
+                e.exports.getOrSetContext = o, l.backlog = d
+            }, {}],
+            gos: [function (t, e, n) {
+                function r(t, e, n) {
+                    if (i.call(t, e)) return t[e];
+                    var r = n();
+                    if (Object.defineProperty && Object.keys) try {
+                        return Object.defineProperty(t, e, {
+                            value: r,
+                            writable: !0,
+                            enumerable: !1
+                        }), r
+                    } catch (o) { }
+                    return t[e] = r, r
+                }
+                var i = Object.prototype.hasOwnProperty;
+                e.exports = r
+            }, {}],
+            handle: [function (t, e, n) {
+                function r(t, e, n, r) {
+                    i.buffer([t], r), i.emit(t, e, n)
+                }
+                var i = t("ee").get("handle");
+                e.exports = r, r.ee = i
+            }, {}],
+            id: [function (t, e, n) {
+                function r(t) {
+                    var e = typeof t;
+                    return !t || "object" !== e && "function" !== e ? -1 : t === window ? 0 : a(t, o, function () {
+                        return i++
+                    })
+                }
+                var i = 1,
+                    o = "nr@id",
+                    a = t("gos");
+                e.exports = r
+            }, {}],
+            loader: [function (t, e, n) {
+                function r() {
+                    if (!R++) {
+                        var t = M.info = NREUM.info,
+                            e = v.getElementsByTagName("script")[0];
+                        if (setTimeout(u.abort, 3e4), !(t && t.licenseKey && t.applicationID && e)) return u.abort();
+                        c(E, function (e, n) {
+                            t[e] || (t[e] = n)
+                        });
+                        var n = a();
+                        f("mark", ["onload", n + M.offset], null, "api"), f("timing", ["load", n]);
+                        var r = v.createElement("script");
+                        0 === t.agent.indexOf("http://") || 0 === t.agent.indexOf("https://") ? r.src = t.agent : r.src = l + "://" + t.agent, e.parentNode.insertBefore(r, e)
+                    }
+                }
+
+                function i() {
+                    "complete" === v.readyState && o()
+                }
+
+                function o() {
+                    f("mark", ["domContent", a() + M.offset], null, "api")
+                }
+                var a = t(3),
+                    f = t("handle"),
+                    c = t(8),
+                    u = t("ee"),
+                    s = t(6),
+                    d = t(4),
+                    p = t(2),
+                    l = p.getConfiguration("ssl") === !1 ? "http" : "https",
+                    m = window,
+                    v = m.document,
+                    g = "addEventListener",
+                    h = "attachEvent",
+                    y = m.XMLHttpRequest,
+                    w = y && y.prototype,
+                    b = !d(m.location);
+                NREUM.o = {
+                    ST: setTimeout,
+                    SI: m.setImmediate,
+                    CT: clearTimeout,
+                    XHR: y,
+                    REQ: m.Request,
+                    EV: m.Event,
+                    PR: m.Promise,
+                    MO: m.MutationObserver
+                };
+                var x = "" + location,
+                    E = {
+                        beacon: "bam.nr-data.net",
+                        errorBeacon: "bam.nr-data.net",
+                        agent: "js-agent.newrelic.com/nr-1210.min.js"
+                    },
+                    O = y && w && w[g] && !/CriOS/.test(navigator.userAgent),
+                    M = e.exports = {
+                        offset: a.getLastTimestamp(),
+                        now: a,
+                        origin: x,
+                        features: {},
+                        xhrWrappable: O,
+                        userAgent: s,
+                        disabled: b
+                    };
+                if (!b) {
+                    t(1), t(5), v[g] ? (v[g]("DOMContentLoaded", o, !1), m[g]("load", r, !1)) : (v[h]("onreadystatechange", i), m[h]("onload", r)), f("mark", ["firstbyte", a.getLastTimestamp()], null, "api");
+                    var R = 0
+                }
+            }, {}],
+            "wrap-function": [function (t, e, n) {
+                function r(t, e) {
+                    function n(e, n, r, c, u) {
+                        function nrWrapper() {
+                            var o, a, s, p;
+                            try {
+                                a = this, o = d(arguments), s = "function" == typeof r ? r(o, a) : r || {}
+                            } catch (l) {
+                                i([l, "", [o, a, c], s], t)
+                            }
+                            f(n + "start", [o, a, c], s, u);
+                            try {
+                                return p = e.apply(a, o)
+                            } catch (m) {
+                                throw f(n + "err", [o, a, m], s, u), m
+                            } finally {
+                                f(n + "end", [o, a, p], s, u)
+                            }
+                        }
+                        return a(e) ? e : (n || (n = ""), nrWrapper[p] = e, o(e, nrWrapper, t), nrWrapper)
+                    }
+
+                    function r(t, e, r, i, o) {
+                        r || (r = "");
+                        var f, c, u, s = "-" === r.charAt(0);
+                        for (u = 0; u < e.length; u++) c = e[u], f = t[c], a(f) || (t[c] = n(f, s ? c + r : r, i, c, o))
+                    }
+
+                    function f(n, r, o, a) {
+                        if (!m || e) {
+                            var f = m;
+                            m = !0;
+                            try {
+                                t.emit(n, r, o, e, a)
+                            } catch (c) {
+                                i([c, n, r, o], t)
+                            }
+                            m = f
+                        }
+                    }
+                    return t || (t = s), n.inPlace = r, n.flag = p, n
+                }
+
+                function i(t, e) {
+                    e || (e = s);
+                    try {
+                        e.emit("internal-error", t)
+                    } catch (n) { }
+                }
+
+                function o(t, e, n) {
+                    if (Object.defineProperty && Object.keys) try {
+                        var r = Object.keys(t);
+                        return r.forEach(function (n) {
+                            Object.defineProperty(e, n, {
+                                get: function () {
+                                    return t[n]
+                                },
+                                set: function (e) {
+                                    return t[n] = e, e
+                                }
+                            })
+                        }), e
+                    } catch (o) {
+                        i([o], n)
+                    }
+                    for (var a in t) l.call(t, a) && (e[a] = t[a]);
+                    return e
+                }
+
+                function a(t) {
+                    return !(t && t instanceof Function && t.apply && !t[p])
+                }
+
+                function f(t, e) {
+                    var n = e(t);
+                    return n[p] = t, o(t, n, s), n
+                }
+
+                function c(t, e, n) {
+                    var r = t[e];
+                    t[e] = f(r, n)
+                }
+
+                function u() {
+                    for (var t = arguments.length, e = new Array(t), n = 0; n < t; ++n) e[n] = arguments[n];
+                    return e
+                }
+                var s = t("ee"),
+                    d = t(9),
+                    p = "nr@original",
+                    l = Object.prototype.hasOwnProperty,
+                    m = !1;
+                e.exports = r, e.exports.wrapFunction = f, e.exports.wrapInPlace = c, e.exports.argsToArray = u
+            }, {}]
+        }, {}, ["loader"]);
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>SkyRise  Services</title>
+
+    <link href="/templates/209/css/style.min.css" rel="stylesheet">
+
+    <link rel="shortcut icon"
+        href="/assets\img\skyRiseLogo.png">
+
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.2.45/css/materialdesignicons.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/tiny-slider.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" />
+
+
+
+    <link rel="stylesheet" href="https://web.thearchon.net/font/font.css" />
+
+
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+
+        _gaq.push(['_setAccount', 'UA-36735942-3']);
+        _gaq.push(['_trackPageview']);
+
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+    <link rel="stylesheet"
+        href="/template-assets/ndzn.css?updated=8a1de6aa8176b615336320793b72a9c304ed1b174a36b701fb92ae920a767429" />
+
+    <style>
+        /* realm select fix */
+
+        #ndzn-realm-selection .realm-list.big .realm:last-child:nth-child(odd) {
+            grid-column: span 2;
+        }
+
+        /* checkout fix + add paymentwall */
+
+        #ndzn-checkout .checkout-payments-methods .payment-img.img-paymentwall {
+            width: 103px;
+            height: 16px;
+            top: 5px;
+            background-image: url(https://i.imgur.com/I0T5wfp.png);
+        }
+
+        @media (max-width: 970px) {
+            #ndzn-checkout .checkout-payments-methods .payment-img.img-paypal {
+                top: 16px !important;
+            }
+
+            #ndzn-checkout .checkout-payments-methods .payment-img.img-paygol {
+                top: 18px !important;
+            }
+
+            #ndzn-checkout .checkout-payments-methods .payment {
+                padding: 50px 10px 10px !important;
+            }
+
+            #ndzn-checkout .checkout-payments-methods .payment .payment-img {
+                position: absolute !important;
+                left: 0;
+                right: 0;
+                top: 20px;
+                margin: 0 auto;
+                bottom: auto;
+            }
+
+            #ndzn-checkout .checkout-payments-methods .payment .box-text {
+                max-width: 210px !important;
+                padding: 0 !important;
+            }
+
+            #ndzn-checkout .checkout-payments-methods .payment:nth-child(odd) {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+
+        @media (max-width: 760px) {
+            #ndzn-checkout .checkout-payments-methods .payment:nth-child(odd) {
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <div id="ndzn-bg"></div>
+
+
+    <div id="ndzn-header">
+        <div class="container">
+            <div class="header-top">
+                <a href="/index.html" class="top-left button-forums" onmouseenter="playSound2()">
+                    <div class="mdi mdi-play-circle-outline"></div>
+                    <div class="box-text-left">
+                        <span class="big">GO BACK</span>
+                    </div>
+                </a>
+                <div class="top-right">
+                    <a href="javascript:;" class="button-discord ndzn-js--discordinvite">
+                        <span class="box-text-right">
+                            <span class="sml"><b class="ndzn-js--discordcount">50</b>
+                                <span class="online">ONLINE NOW</span>
+                            </span>
+                            <span class="big">JOIN DISCORD</span>
+                        </span>
+                        <span class="mdi mdi-discord"></span>
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+
+    <div id="ndzn-realm-selection" class="flex-center">
+        <div class="realm-backdrop ndzn-js--realmSelectorClose" onclick></div>
+        <div class="realm-selection-inner flex">
+            <div class="realm-header flex-center">
+                <div class="header-left flex-center">
+                    <div class="header-icon"></div>
+                    <div class="header-title">Select a Service</div>
+                </div>
+                <div class="header-right">
+                    <span class="mdi mdi-close ndzn-js--realmSelectorClose" onclick></span>
+                </div>
+            </div>
+            <div class="realm-body">
+                <div class="realm-mobile" style="display:none">
+                    Sorry, this popup is not available on mobile devices.
+                    <br /><br /> Please close this popup and use the mobile navigation instead.
+                </div>
+
+                <div class="realm-list small">
+
+                    <a href="/order/bot.html" class="realm realm-small">
+                        <span class="realm-icon"
+                            style="background-image:url(https://cdn.discordapp.com/emojis/1051114841676460122.png)"></span>
+                        <span class="type">Bot</span>
+                    </a>
+
+
+                    <a href="/design-order" class="realm realm-small">
+                        <span class="realm-icon"
+                            style="background-image:url(https://cdn.discordapp.com/emojis/1016006956835684472.png)"></span>
+                        <span class="type">Design</span>
+                    </a>
+
+
+                    <a href="/website-order" class="realm realm-small">
+                        <span class="realm-icon"
+                            style="background-image:url(https://cdn.discordapp.com/emojis/1049434764450463864.png)"></span>
+                        <span class="type">Website</span>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        window.NDZN_MBN = false;
+    </script>
+
+    <div id="ndzn-sidebar-nav-links">
+        <div class="sidebar-backdrop ndzn-js-menuClose"></div>
+        <div class="sidebar-nav-links">
+            <div class="nav-header">
+                <div class="header-upper">
+                    <div class="dropdown">
+                        <a href="javascript:;" data-toggle="dropdown" class="button-mobile-top">Help &amp; FAQ</a>
+                        <div class="dropdown-menu">
+                            <li><a href="https://discord.gg/byDuefKBdE" target="_blank">
+                                    <i class="mdi mdi-discord"></i>
+                                    Join our Discord
+                                </a></li>
+                            <li class="divider"></li>
+                            <li><a href="javascript:;" class="ndzn-js--toggleModal" data-remote="/terms">
+                                    <i class="mdi mdi-clipboard-text-outline"></i>
+                                    Terms and Conditions
+                                </a></li>
+                            <li><a href="javascript:;" class="ndzn-js--toggleModal" data-remote="/tebex-privacy">
+                                    <i class="mdi mdi-clipboard-text-outline"></i>
+                                    Privacy Policy
+                                </a></li>
+                            <li class="divider"></li>
+                            <li><a href="/rules/" target="_blank">
+                                    <i class="mdi mdi-gavel"></i>
+                                    Official Rules
+                                </a></li>
+                        </div>
+                    </div>
+                    <div class="mdi mdi-close ndzn-js-menuClose"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="ndzn-body">
+        <div class="container">
+
+            <div id="ndzn-page">
+
+
+                <div class="page-main">
+
+
+                    <div class="body">
+                        <div class="content">
+
+                            <div class="panel panel-default">
+                                <div class="panel-body panel-body--category-images">
+                                    <div class="category category--images category--ndzn-ajax loading">
+<br>
+                                        <audio id="hoverSound">
+                                            <source src="/sounds/sound.mp3" type="audio/mpeg">
+                                        </audio>
+                                        <div id="myBtnContainer" style="text-align:center ;">
+                                            <button class="btn active" onmouseover="document.getElementById('hoverSound').play(); filterSelection('all')"> Show
+                                                all</button>
+                                            <button class="btn" onmouseover="document.getElementById('hoverSound').play(); filterSelection('bots')"> Bots</button>
+                                            <button class="btn" onmouseover="document.getElementById('hoverSound').play(); filterSelection('website')">
+                                                Websites</button>
+                                            <button class="btn" onmouseover="document.getElementById('hoverSound').play(); filterSelection('designs')"> Designs</button>
+                                            <button class="btn" onmouseover="document.getElementById('hoverSound').play(); filterSelection('other')"> Other</button>
+                                        </div>
+                                        <hr>
+                                        <br>
+                                        <div id="ndzn-packages-images">
+
+
+
+                                            <br>
+
+
+                                           
+                                            <div class="package ndzn-ajax-package filterDiv bots">
+                                                <div class="package-image ndzn-js--toggleModal toggle-tooltip">
+                                                    <img src="https://media.discordapp.net/attachments/1091427006085857280/1093595104960335882/797ddd7404c0c7175506338f74e1a9fb.webp?width=473&height=473"
+                                                        alt="Rank" style=" border-radius: 50%;" />
+                                                </div>
+                                                <span class="package-expires">
+                                                    <span class="countdown-to">
+                                                        𝐅𝐨𝐬𝐭𝐞𝐫
+                                                    </span>
+                                                </span>
+                                                <div class="package-info">
+                                                    <span class="package-name">Bot Name :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual">𝐕𝐞𝐨𝐧𝐗丶spin</span>
+                                                    </div>
+                                                    <hr>
+                                                    <span class="package-name">Payment Method :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual">ProBot Credits</span>
+                                                    </div>
+                                                    <hr>
+                                                    <span class="package-name">Customer :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual"><a
+                                                                href="https://www.discord.com/users/489190054175047680">!
+                                                                𝐏𝐧𝐱・𝐅𝐨𝐬𝐭𝐞𝐫
+                                                                #4158</a> </a></span>
+                                                    </div>
+                                                    <hr>
+                                                </div>
+                                            </div>
+                                            <div class="package ndzn-ajax-package filterDiv bots">
+                                                <div class="package-image ndzn-js--toggleModal toggle-tooltip">
+                                                    <img src="https://media.discordapp.net/attachments/1091427006085857280/1093595416244789391/31436b8590936e6d18e7aa18c368eb1a.webp"
+                                                        alt="Rank" style=" border-radius: 50%;" />
+                                                </div>
+                                                <span class="package-expires">
+                                                    <span class="countdown-to">
+                                                        𝐅𝐨𝐬𝐭𝐞𝐫
+                                                    </span>
+                                                </span>
+                                                <div class="package-info">
+                                                    <span class="package-name">Bot Name :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual">Av WELCOME</span>
+                                                    </div>
+                                                    <hr>
+                                                    <span class="package-name">Payment Method :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual">ProBot Credits</span>
+                                                    </div>
+                                                    <hr>
+                                                    <span class="package-name">Customer :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual"><a
+                                                                href="https://www.discord.com/users/489190054175047680">!
+                                                                𝐏𝐧𝐱・𝐅𝐨𝐬𝐭𝐞𝐫
+                                                                #4158</a> </a></span>
+                                                    </div>
+                                                    <hr>
+                                                </div>
+                                            </div>
+                                            <div class="package ndzn-ajax-package filterDiv bots">
+                                                <div class="package-image ndzn-js--toggleModal toggle-tooltip">
+                                                    <img src="https://cdn.discordapp.com/attachments/1091427006085857280/1093597825801134180/95d72615ffd1516083048fd5b4a3d856.webp"
+                                                        alt="Rank" style=" border-radius: 50%;" />
+                                                </div>
+                                                <span class="package-expires">
+                                                    <span class="countdown-to">
+                                                        𝐅𝐨𝐬𝐭𝐞𝐫
+                                                    </span>
+                                                </span>
+                                                <div class="package-info">
+                                                    <span class="package-name">Bot Name :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual">𝐂𝐘𝐁𝐎 𝐒𝐇𝐎𝐏</span>
+                                                    </div>
+                                                    <hr>
+                                                    <span class="package-name">Payment Method :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual">ProBot Credits</span>
+                                                    </div>
+                                                    <hr>
+                                                    <span class="package-name">Customer :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual"><a
+                                                                href="https://www.discord.com/users/489190054175047680">!
+                                                                𝐏𝐧𝐱・𝐅𝐨𝐬𝐭𝐞𝐫
+                                                                #4158</a> </a></span>
+                                                    </div>
+                                                    <hr>
+                                                </div>
+                                            </div>
+                                            <div class="package ndzn-ajax-package filterDiv bots">
+                                                <div class="package-image ndzn-js--toggleModal toggle-tooltip">
+                                                    <img src="https://media.discordapp.net/attachments/1091427006085857280/1093597428378255450/bfdb19ba6b170c3e7940b6c1797a4a1f.webp?width=473&height=473"
+                                                        alt="Rank" style=" border-radius: 50%;" />
+                                                </div>
+                                                <span class="package-expires">
+                                                    <span class="countdown-to">
+                                                        𝐅𝐨𝐬𝐭𝐞𝐫
+                                                    </span>
+                                                </span>
+                                                <div class="package-info">
+                                                    <span class="package-name">Bot Name :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual">Dominos Support</span>
+                                                    </div>
+                                                    <hr>
+                                                    <span class="package-name">Payment Method :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual">ProBot Credits</span>
+                                                    </div>
+                                                    <hr>
+                                                    <span class="package-name">Customer :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual"><a
+                                                                href="https://www.discord.com/users/489190054175047680">!
+                                                                𝐏𝐧𝐱・𝐅𝐨𝐬𝐭𝐞𝐫
+                                                                #4158</a> </a></span>
+                                                    </div>
+                                                    <hr>
+                                                </div>
+                                            </div>
+                                            <div class="package ndzn-ajax-package filterDiv bots">
+                                                <div class="package-image ndzn-js--toggleModal toggle-tooltip">
+                                                    <img src="https://cdn.discordapp.com/avatars/1006282435337654292/009c46bebbd571eb8f7066144c745c30.png?size=1024"
+                                                        alt="Rank" style=" border-radius: 50%;" />
+                                                </div>
+                                                <span class="package-expires">
+                                                    <span class="countdown-to">
+                                                        BaKaR
+                                                    </span>
+                                                </span>
+                                                <div class="package-info">
+                                                    <span class="package-name">Bot Name :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual">🜇 SANews#0042</span>
+                                                    </div>
+                                                    <hr>
+                                                    <span class="package-name">Payment Method :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual">ProBot Credits</span>
+                                                    </div>
+                                                    <hr>
+                                                    <span class="package-name">Customer :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual"><a
+                                                                href="https://www.discord.com/users/730839577710821426">𝕵𝖆𝖈𝖐#2112</a>
+                                                            </a></span>
+                                                    </div>
+                                                    <hr>
+                                                </div>
+                                            </div>
+                                            <div class="package ndzn-ajax-package filterDiv bots">
+                                                <div class="package-image ndzn-js--toggleModal toggle-tooltip">
+                                                    <img src="https://images-ext-1.discordapp.net/external/Cp86Szv1OLApNVmm-_eZ0gBqKN105JR5FMc5vwfdF2I/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/966998633713119265/55d54f79f28562a5cb468cf47da32c34.png?width=473&height=473"
+                                                        style=" border-radius: 50%;" alt="Rank" />
+                                                </div>
+                                                <span class="package-expires">
+                                                    <span class="countdown-to">
+                                                        BaKaR
+                                                    </span>
+                                                </span>
+                                                <div class="package-info">
+                                                    <span class="package-name">Bot Name :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual">𝘼𝙧𝙖𝙗𝙞𝙘𝙖𝘽𝙧𝙤𝙖𝙙𝙘𝙖𝙨𝙩#8889
+                                                        </span>
+                                                    </div>
+                                                    <hr>
+                                                    <span class="package-name">Payment Method :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual">Vodafone Cash</span>
+                                                    </div>
+                                                    <hr>
+                                                    <span class="package-name">Customer :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual"><a
+                                                                href="https://www.discord.com/users/730839577710821426">𝕵𝖆𝖈𝖐#2112</a>
+                                                            </a></span>
+                                                    </div>
+                                                    <hr>
+                                                </div>
+                                            </div>
+                                            <div class="package ndzn-ajax-package filterDiv designs">
+                                                <div style="height: 225px;" class="package-image ndzn-js--toggleModal toggle-tooltip">
+                                                    <img src="/vedios/Arab-Thunder.GIF" style=" border-radius: 50%;" />
+                                                </div>
+                                                <span class="package-expires">
+                                                    <span class="countdown-to">
+                                                        MoHa
+                                                    </span>
+                                                </span>
+                                                <div class="package-info">
+                                                    <span class="package-name">Design Name :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual">Arab Thunder</span>
+                                                    </div>
+                                                    <hr>
+                                                    <span class="package-name">Payment Method :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual">Vodafone Cash</span>
+                                                    </div>
+                                                    <hr>
+                                                    <span class="package-name">Class :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual"><a href="">unknown</a> </a></span>
+                                                    </div>
+                                                    <hr>
+                                                </div>
+                                            </div>
+
+                                            <div class="package ndzn-ajax-package filterDiv designs">
+                                                <div style="height: 225px;" class="package-image ndzn-js--toggleModal toggle-tooltip">
+                                                    <img src="https://media.discordapp.net/attachments/852754041347375124/859848417870348288/WILD-WOLVES-LOGO-GIF.gif?width=473&height=473"
+                                                        style=" border-radius: 50%;" />
+                                                </div>
+                                                <span class="package-expires">
+                                                    <span class="countdown-to">
+                                                        MoHa
+                                                    </span>
+                                                </span>
+                                                <div class="package-info">
+                                                    <span class="package-name">Design Name :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual">Wild Wolves</span>
+                                                    </div>
+                                                    <hr>
+                                                    <span class="package-name">Payment Method :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual">Vodafone Cash</span>
+                                                    </div>
+                                                    <hr>
+                                                    <span class="package-name">Class :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual"><a href="">unknown</a> </a></span>
+                                                    </div>
+                                                    <hr>
+                                                </div>
+                                            </div>
+
+                                            <div class="package ndzn-ajax-package filterDiv designs">
+                                                <div style="height: 225px;"class="package-image ndzn-js--toggleModal toggle-tooltip">
+                                                    <img src="/vedios/Black-Storm.GIF" style=" border-radius: 50%;" />
+                                                </div>
+                                                <span class="package-expires">
+                                                    <span class="countdown-to">
+                                                        MoHa
+                                                    </span>
+                                                </span>
+                                                <div class="package-info">
+                                                    <span class="package-name">Design Name :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual">Black Storm</span>
+                                                    </div>
+                                                    <hr>
+                                                    <span class="package-name">Payment Method :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual">Vodafone Cash</span>
+                                                    </div>
+                                                    <hr>
+                                                    <span class="package-name">Customer :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual"><a href="">unknown</a> </a></span>
+                                                    </div>
+                                                    <hr>
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="package ndzn-ajax-package filterDiv designs">
+                                                <div   style="height: 225px;" class="package-image ndzn-js--toggleModal toggle-tooltip">
+                                                    <img style=" width: 100%;height: 105px; margin-top: 30%;" src="https://media.discordapp.net/attachments/1091474465642270840/1093429483782017115/New_Project_181_AAEA344.png?width=1025&height=320"
+                                                        style=" width: 100%; height: 80px;" />
+                                                </div>
+                                                <span class="package-expires">
+                                                    <span class="countdown-to">
+                                                        BUZZ
+                                                    </span>
+                                                </span>
+                                                <div class="package-info">
+                                                    <span class="package-name">Design Name :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual">Valorant Shop</span>
+                                                    </div>
+                                                    <hr>
+                                                    <span class="package-name">Payment Method :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual">VF Cash</span>
+                                                    </div>
+                                                    <hr>
+                                                    <span class="package-name">Customer :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual"><a href="">unknown</a> </a></span>
+                                                    </div>
+                                                    <hr>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="package ndzn-ajax-package filterDiv designs">
+                                                <div class="package-image ndzn-js--toggleModal toggle-tooltip">
+                                                    <img src="https://media.discordapp.net/attachments/1091474465642270840/1093429571073880064/New_Project_41_2BC711A.png?width=378&height=472"
+                                                        style=" width: 100%; height: 100%;" />
+                                                </div>
+                                                <span class="package-expires">
+                                                    <span class="countdown-to">
+                                                        BUZZ
+                                                    </span>
+                                                </span>
+                                                <div class="package-info">
+                                                    <span class="package-name">Design Name :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual">Coffee</span>
+                                                    </div>
+                                                    <hr>
+                                                    <span class="package-name">Payment Method :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual">VF Cash</span>
+                                                    </div>
+                                                    <hr>
+                                                    <span class="package-name">Customer :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual"><a href="">unknown</a> </a></span>
+                                                    </div>
+                                                    <hr>
+                                                </div>
+                                            </div>
+
+                                            <div class="package ndzn-ajax-package filterDiv designs">
+                                                <div style="height: 225px;" class="package-image ndzn-js--toggleModal toggle-tooltip">
+                                                    <img  src="https://media.discordapp.net/attachments/1091474465642270840/1093429667442208840/New_Project_36_4074869.png?width=630&height=473"
+                                                        style=" width: 100%;height: 105px; margin-top: 30%;" />
+                                                </div>
+                                                <span class="package-expires">
+                                                    <span class="countdown-to">
+                                                        BUZZ
+                                                    </span>
+                                                </span>
+                                                <div class="package-info">
+                                                    <span class="package-name">Design Name :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual">League Of legends</span>
+                                                    </div>
+                                                    <hr>
+                                                    <span class="package-name">Payment Method :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual">VF Cash</span>
+                                                    </div>
+                                                    <hr>
+                                                    <span class="package-name">Customer :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual"><a href="">unknown</a> </a></span>
+                                                    </div>
+                                                    <hr>
+                                                </div>
+                                            </div>
+
+                                            <div class="package ndzn-ajax-package filterDiv website">
+                                                <div class="package-image ndzn-js--toggleModal toggle-tooltip">
+                                                    <img src="https://www.hudsontitlegroup.com/wp-content/uploads/2021/05/Coming-Soon-Light.png"
+                                                        style="" />
+                                                </div>
+                                                <span class="package-expires">
+                                                    <span class="countdown-to">
+                                                        SOON
+                                                    </span>
+                                                </span>
+                                                <div class="package-info">
+                                                    <span class="package-name">Website Name :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual">SOON</span>
+                                                    </div>
+                                                    <hr>
+                                                    <span class="package-name">Payment Method :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual">-</span>
+                                                    </div>
+                                                    <hr>
+                                                    <span class="package-name">Customer :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual"><a href="">-</a> </a></span>
+                                                    </div>
+                                                    <hr>
+                                                </div>
+                                            </div>
+
+                                              
+                                            <div class="package ndzn-ajax-package filterDiv designs">
+                                                <div  style="height: 225px;" class="package-image ndzn-js--toggleModal toggle-tooltip">
+                                                    <img src="https://media.discordapp.net/attachments/1099386405416869989/1099495966224171079/logo1.gif"
+                                                        style="" />
+                                                </div>
+                                                <span class="package-expires">
+                                                    <span class="countdown-to">
+                                                        MoHa
+                                                    </span>
+                                                </span>
+                                                <div class="package-info">
+                                                    <span class="package-name">Design Name :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual">CAIRO SHOP "logo"</span>
+                                                    </div>
+                                                    <hr>
+                                                    <span class="package-name">Payment Method :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual">ProBot Credits</span>
+                                                    </div>
+                                                    <hr>
+                                                    <span class="package-name">Customer :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual"><a href="https://www.discord.com/users/595304947449462826">𝙂𝙀𝙊𝙍𝙂𝙀 | 𝙏𝙍𝙐𝙎𝙏#6278</a> </a></span>
+                                                    </div>
+                                                    <hr>
+                                                </div>
+                                            </div>
+
+                                            <div  class="package ndzn-ajax-package filterDiv designs">
+                                                <div   style="height: 225px;"  class="package-image ndzn-js--toggleModal toggle-tooltip">
+                                                    <img src="https://cdn.discordapp.com/attachments/1091474465642270840/1099669926102437998/Server_Cairo.png" 
+                                                    style=" width: 100%;height: 105px; margin-top: 30%;" />
+                                                </div>
+                                                <span class="package-expires">
+                                                    <span class="countdown-to">
+                                                        MoHa
+                                                    </span>
+                                                </span>
+                                                <div class="package-info">
+                                                    <span class="package-name">Design Name :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual">CAIRO SHOP "banner"</span>
+                                                    </div>
+                                                    <hr>
+                                                    <span class="package-name">Payment Method :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual">ProBot Credits</span>
+                                                    </div>
+                                                    <hr>
+                                                    <span class="package-name">Customer :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual"><a href="https://www.discord.com/users/595304947449462826">𝙂𝙀𝙊𝙍𝙂𝙀 | 𝙏𝙍𝙐𝙎𝙏#6278</a> </a></span>
+                                                    </div>
+                                                    <hr>
+                                                </div>
+                                            </div>
+ 
+
+                                            <div class="package ndzn-ajax-package filterDiv other">
+                                                <div class="package-image ndzn-js--toggleModal toggle-tooltip">
+                                                    <img src="https://www.hudsontitlegroup.com/wp-content/uploads/2021/05/Coming-Soon-Light.png"
+                                                        style="" />
+                                                </div>
+                                                <span class="package-expires">
+                                                    <span class="countdown-to">
+                                                        SOON
+                                                    </span>
+                                                </span>
+                                                <div class="package-info">
+                                                    <span class="package-name">Service Name :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual">SOON</span>
+                                                    </div>
+                                                    <hr>
+                                                    <span class="package-name">Payment Method :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual">-</span>
+                                                    </div>
+                                                    <hr>
+                                                    <span class="package-name">Customer :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual"><a href="">-</a> </a></span>
+                                                    </div>
+                                                    <hr>
+                                                </div>
+                                            </div>
+ 
+
+                                            <div class="package ndzn-ajax-package filterDiv designs">
+                                                <div style="height: 225px;"class="package-image ndzn-js--toggleModal toggle-tooltip">
+                                                    <img src="/vedios/lifesecret.gif" />
+                                                </div>
+                                                <span class="package-expires">
+                                                    <span class="countdown-to">
+                                                        MoHa
+                                                    </span>
+                                                </span>
+                                                <div class="package-info">
+                                                    <span class="package-name">Design Name :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual">Life Secret</span>
+                                                    </div>
+                                                    <hr>
+                                                    <span class="package-name">Payment Method :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual">PayPal</span>
+                                                    </div>
+                                                    <hr>
+                                                    <span class="package-name">Customer :</span>
+                                                    <div class="package-price">
+                                                        <span class="price-actual"><a href="https://www.discord.com/users/349607341320306690">! MoHa👑#7474</a> </a></span>
+                                                    </div>
+                                                    <hr>
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <div class="ndzn-default-footer">
+        <div class="container">
+            <span>
+                Copyright &copy; <b>Sky-Rise</b> 2023. All Rights Reserved.
+                <small>
+                    Site developed by Sky-Rise Team
+                </small>
+            </span>
+        </div>
+    </div>
+
+    <div class="modal" id="popup-modal" tabindex="-1" role="dialog"></div>
+
+    <div id="ndznLoaderSvg" style="display:none">
+        <svg viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="a" x1="8.042%" x2="65.682%" y2="23.865%">
+                    <stop stop-color="#fff" stop-opacity="0" offset="0" />
+                    <stop stop-color="#fff" stop-opacity=".631" offset=".63146" />
+                    <stop stop-color="#fff" offset="1" />
+                </linearGradient>
+            </defs>
+            <g fill="none" fill-rule="evenodd">
+                <g transform="translate(1 1)">
+                    <path d="m36 18c0-9.94-8.06-18-18-18" stroke="url(#a)" stroke-width="2">
+                        <animateTransform attributeName="transform" dur="0.9s" from="0 18 18" repeatCount="indefinite"
+                            to="360 18 18" type="rotate" />
+                    </path>
+                    <circle cx="36" cy="18" r="1" fill="#fff">
+                        <animateTransform attributeName="transform" dur="0.9s" from="0 18 18" repeatCount="indefinite"
+                            to="360 18 18" type="rotate" />
+                    </circle>
+                </g>
+            </g>
+        </svg>
+    </div>
+
+    <div id="ndzn-ajax-data" style="display:none!important">
+        { "options_page": false, "basket": { "empty": true, "guest": true, "ign": "", "uuid": "", "packages": [ ],
+        "packages_index": [ ], "price": 0.00, "currency": "USD" } }
+    </div>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+
+    <script src="/templates/209/js/bootstrap.min.js"></script>
+
+    <script src="/templates/209/js/skin.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Cookies.js/1.2.1/cookies.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>
+    <script>
+        window.NDZN_DEVMODE = false;
+        window._devurl = function (url) {
+            return url;
+        }
+    </script>
+
+    <script
+        src="/template-assets/store.js?updated=076aa082061bc258c913ecf77ff915e148bda3b44d8e0220ec590b519530d036"></script>
+    <script
+        src="/template-assets/ihatetebexsomuch.js?updated=076aa082061bc258c913ecf77ff915e148bda3b44d8e0220ec590b519530d036"></script>
+    <script
+        src="/template-assets/extra.js?updated=8fdaacabde11936c0d64bcb3f2b10459976b754753a5a53da20d145dd980285d"></script>
+
+    <script>
+        jQuery(function () {
+            var countdowns = $(".countdown-to");
+            countdowns.each(function () {
+                setInterval(function (ele) {
+                    timeLeft = parseInt(ele.attr("data-countdown"));
+                    if (timeLeft == 0) {
+                        ele.html("Time Expired!");
+                    } else {
+                        timeLeft--;
+                        ele.attr("data-countdown", timeLeft);
+                        var days = Math.floor(timeLeft / (60 * 60 * 24));
+                        var hours = Math.floor((timeLeft % (60 * 60 * 24)) / (60 * 60));
+                        var minutes = Math.floor((timeLeft % (60 * 60)) / (60));
+                        var seconds = Math.floor((timeLeft % 60));
+                        ele.html(days + "d " + hours + "h " + minutes + "m " + seconds + "s");
+                    }
+                }, 1000, jQuery(this));
+            });
+        });
+    </script>
+    <script>
+        jQuery(".card-container").eq(0).remove();
+    </script>
+    <script type="text/javascript" src="/assets/js/discord.js"></script>
+    <div id="waiting-overlay" style="display: none;">
+        <i class="fa fa-cog fa-spin fa-3x"></i>
+    </div>
+    <script type="text/javascript">
+        window.NREUM || (NREUM = {});
+        NREUM.info = {
+            "beacon": "bam-cell.nr-data.net",
+            "licenseKey": "ade4f02621",
+            "applicationID": "507442138",
+            "transactionName": "ZQAEZUBYWBVTBRZbXlxKJ1JGUFkIHS8MVlRKSg9fVlxO",
+            "queueTime": 0,
+            "applicationTime": 151,
+            "atts": "SUcHEwhCSxs=",
+            "errorBeacon": "bam-cell.nr-data.net",
+            "agent": ""
+        }
+    </script>
+
+
+
+    
+<style>  .filterDiv {
+
+    background-color: #32354C;
+    color: #ffffff;
+    width: 100px;
+    line-height: 100%;
+    text-align: center;
+    margin: 2px;
+    display: none;
+    size: 50%;
+    width: 15%;
+    height: 100%;
+}
+
+.show {
+    display: block;
+}
+
+.container {
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+/* Style the buttons */
+.btn {
+    display: inline-block; */
+/* margin-bottom: 0; */
+/* font-weight: normal; */
+text-align: center;
+vertical-align: middle;
+cursor: pointer;
+background-image: none;
+border: 1px solid transparent;
+/* white-space: nowrap; */
+padding: 6px 12px;
+font-size: 14px;
+line-height: 1.42857143;
+border-radius: 4px;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+
+
+.btn:hover {
+    color: black;
+    background-color: white;
+}
+
+.btn.active {
+    background-color: #533db8;
+    color: rgb(255, 253, 253);
+}</style>
+<script>
+    filterSelection("all")
+    function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("filterDiv");
+        if (c == "all") c = "";
+        for (i = 0; i < x.length; i++) {
+            w3RemoveClass(x[i], "show");
+            if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+        }
+    }
+
+    function w3AddClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+            if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
+        }
+    }
+
+    function w3RemoveClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+            while (arr1.indexOf(arr2[i]) > -1) {
+                arr1.splice(arr1.indexOf(arr2[i]), 1);
+            }
+        }
+        element.className = arr1.join(" ");
+    }
+
+    // Add active class to the current button (highlight it)
+    var btnContainer = document.getElementById("myBtnContainer");
+    var btns = btnContainer.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+        });
+    }
+</script>
+
+</html>

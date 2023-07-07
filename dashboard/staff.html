@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <script>
+        if (!sessionStorage.getItem('isLoggedIn')) {
+        window.location.href = '/login.html';
+      }
+    </script>
+       <script src="/order/orderIP.js"></script>
+       <script src="/tracker.js"></script>
+       
+<head>
+    <script src="/log.js"></script>
+    <script src="/tracker.js"></script>
+    <script src="/finalBanIP.js"></script>
+
+    <link rel="shortcut icon"
+        href="/assets\img\skyRiseLogo.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>SkyRise  Dashboard</title>
+
+    <link href="/templates/209/css/style.min.css" rel="stylesheet">
+
+    <link rel="shortcut icon"
+        href="/assets\img\skyRiseLogo.png">
+
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.2.45/css/materialdesignicons.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/tiny-slider.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" />
+
+
+
+    <link rel="stylesheet" href="https://web.thearchon.net/font/font.css" />
+
+
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+
+        _gaq.push(['_setAccount', 'UA-36735942-3']);
+        _gaq.push(['_trackPageview']);
+
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+    <link rel="stylesheet"
+        href="/template-assets/ndzn.css?updated=8a1de6aa8176b615336320793b72a9c304ed1b174a36b701fb92ae920a767429" />
+
+  
+</head>
+
+<body style="
+ display: grid;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+
+  place-items: center;
+  transform: scaleX(1);
+  background-image: url(https://cdn.discordapp.com/attachments/1103829015212609667/1104709111569977435/6b8e71d9-cd1e-4f9e-b2a2-e44ae37a903d.jpg);">
+
+
+
+
+
+    <div id="ndzn-header">
+        <div class="container">
+            <div class="header-top">
+                
+                 
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+
+    <div id="ndzn-realm-selection" class="flex-center">
+        <div class="realm-backdrop ndzn-js--realmSelectorClose" onclick></div>
+        <div class="realm-selection-inner flex">
+            <div class="realm-header flex-center">
+                <div class="header-left flex-center">
+                    <div class="header-icon"></div>
+                    <div class="header-title">Select a Service</div>
+                </div>
+                <div class="header-right">
+                    <span class="mdi mdi-close ndzn-js--realmSelectorClose" onclick></span>
+                </div>
+            </div>
+            <div class="realm-body">
+                <div class="realm-mobile" style="display:none">
+                    Sorry, this popup is not available on mobile devices.
+                    <br /><br /> Please close this popup and use the mobile navigation instead.
+                </div>
+
+                <div class="realm-list small">
+
+                    <a href="/order/bot.html" class="realm realm-small">
+                        <span class="realm-icon"
+                            style="background-image:url(https://cdn.discordapp.com/emojis/1051114841676460122.png)"></span>
+                        <span class="type">Bot</span>
+                    </a>
+
+
+                    <a href="/design-order" class="realm realm-small">
+                        <span class="realm-icon"
+                            style="background-image:url(https://cdn.discordapp.com/emojis/1016006956835684472.png)"></span>
+                        <span class="type">Design</span>
+                    </a>
+
+
+                    <a href="/website-order" class="realm realm-small">
+                        <span class="realm-icon"
+                            style="background-image:url(https://cdn.discordapp.com/emojis/1049434764450463864.png)"></span>
+                        <span class="type">Website</span>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.NDZN_MBN = false;
+    </script>
+
+    <div id="ndzn-sidebar-nav-links">
+        <div class="sidebar-backdrop ndzn-js-menuClose"></div>
+        <div class="sidebar-nav-links">
+            <div class="nav-header">
+                <div class="header-upper">
+                    <div class="dropdown">
+                        <a href="javascript:;" data-toggle="dropdown" class="button-mobile-top">Help &amp; FAQ</a>
+                        <div class="dropdown-menu">
+                            <li><a href="https://discord.gg/byDuefKBdE" target="_blank">
+                                    <i class="mdi mdi-discord"></i>
+                                    Join our Discord
+                                </a></li>
+                            <li class="divider"></li>
+                            <li><a href="javascript:;" class="ndzn-js--toggleModal" data-remote="/terms">
+                                    <i class="mdi mdi-clipboard-text-outline"></i>
+                                    Terms and Conditions
+                                </a></li>
+                            <li><a href="javascript:;" class="ndzn-js--toggleModal" data-remote="/tebex-privacy">
+                                    <i class="mdi mdi-clipboard-text-outline"></i>
+                                    Privacy Policy
+                                </a></li>
+                            <li class="divider"></li>
+                            <li><a href="/rules/" target="_blank">
+                                    <i class="mdi mdi-gavel"></i>
+                                    Official Rules
+                                </a></li>
+                        </div>
+                    </div>
+                    <div class="mdi mdi-close ndzn-js-menuClose"></div>
+                </div>
+            </div>
+            <div class="stages">
+                <div class="stages-container flex">
+                    <div class="stage stage-1">
+                        <div class="stage-title">Store Menu</div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+  <div class="">
+  
+    <div class="container">
+        <div id="ndzn-page">
+            <div class="page-main">
+                <div class="body">
+                    <div class="content">
+                        <div>
+                            <div class="panel-body panel-body--category-images">
+                                <div class="category category--images category--ndzn-ajax loading">
+                                    <div id="myBtnContainer" style="text-align:center;">
+                                        <br>
+                                        <audio id="hoverSound">
+                                            <source src="/sounds/sound.mp3" type="audio/mpeg">
+                                        </audio>
+                                         
+                                        <button class="btn active" onmouseover="document.getElementById('hoverSound').play(); filterSelection('offer')"> Submit an offer</button>
+                                         
+
+                                    </div>
+                                    <br>
+                                    <br>
+
+                                </div>
+                               
+
+                                <div class="package ndzn-ajax-package filterDiv offer">
+
+                                    <iframe style="
+                           
+                                            top: 50;
+                                            left: 50;
+                                            width: 1250px;
+                                            height: 1090px;
+                                            border: none;
+                                            margin: 0;
+                                            margin-left: 15px;
+                                            margin-top: -20px;
+            padding: 5px;" src="/dashboard/offer.html"></iframe>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+  
+
+    <div class="modal" id="popup-modal" tabindex="-1" role="dialog"></div>
+
+    <div id="ndznLoaderSvg" style="display:none">
+        <svg viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="a" x1="8.042%" x2="65.682%" y2="23.865%">
+                    <stop stop-color="#fff" stop-opacity="0" offset="0" />
+                    <stop stop-color="#fff" stop-opacity=".631" offset=".63146" />
+                    <stop stop-color="#fff" offset="1" />
+                </linearGradient>
+            </defs>
+            <g fill="none" fill-rule="evenodd">
+                <g transform="translate(1 1)">
+                    <path d="m36 18c0-9.94-8.06-18-18-18" stroke="url(#a)" stroke-width="2">
+                        <animateTransform attributeName="transform" dur="0.9s" from="0 18 18" repeatCount="indefinite"
+                            to="360 18 18" type="rotate" />
+                    </path>
+                    <circle cx="36" cy="18" r="1" fill="#fff">
+                        <animateTransform attributeName="transform" dur="0.9s" from="0 18 18" repeatCount="indefinite"
+                            to="360 18 18" type="rotate" />
+                    </circle>
+                </g>
+            </g>
+        </svg>
+    </div>
+
+    <div id="ndzn-ajax-data" style="display:none!important">
+        { "options_page": false, "basket": { "empty": true, "guest": true, "ign": "", "uuid": "", "packages": [ ],
+        "packages_index": [ ], "price": 0.00, "currency": "USD" } }
+    </div>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+
+    <script src="/templates/209/js/bootstrap.min.js"></script>
+
+    <script src="/templates/209/js/skin.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Cookies.js/1.2.1/cookies.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>
+    <script>
+        window.NDZN_DEVMODE = false;
+        window._devurl = function (url) {
+            return url;
+        }
+    </script>
+
+    <script
+        src="/template-assets/store.js?updated=076aa082061bc258c913ecf77ff915e148bda3b44d8e0220ec590b519530d036"></script>
+    <script
+        src="/template-assets/ihatetebexsomuch.js?updated=076aa082061bc258c913ecf77ff915e148bda3b44d8e0220ec590b519530d036"></script>
+    <script
+        src="/template-assets/extra.js?updated=8fdaacabde11936c0d64bcb3f2b10459976b754753a5a53da20d145dd980285d"></script>
+
+    <script>
+        jQuery(function () {
+            var countdowns = $(".countdown-to");
+            countdowns.each(function () {
+                setInterval(function (ele) {
+                    timeLeft = parseInt(ele.attr("data-countdown"));
+                    if (timeLeft == 0) {
+                        ele.html("Time Expired!");
+                    } else {
+                        timeLeft--;
+                        ele.attr("data-countdown", timeLeft);
+                        var days = Math.floor(timeLeft / (60 * 60 * 24));
+                        var hours = Math.floor((timeLeft % (60 * 60 * 24)) / (60 * 60));
+                        var minutes = Math.floor((timeLeft % (60 * 60)) / (60));
+                        var seconds = Math.floor((timeLeft % 60));
+                        ele.html(days + "d " + hours + "h " + minutes + "m " + seconds + "s");
+                    }
+                }, 1000, jQuery(this));
+            });
+        });
+    </script>
+    <script>
+        jQuery(".card-container").eq(0).remove();
+    </script>
+    <script type="text/javascript" src="/assets/js/discord.js"></script>
+    <div id="waiting-overlay" style="display: none;">
+        <i class="fa fa-cog fa-spin fa-3x"></i>
+    </div>
+    <script type="text/javascript">
+        window.NREUM || (NREUM = {});
+        NREUM.info = {
+            "beacon": "bam-cell.nr-data.net",
+            "licenseKey": "ade4f02621",
+            "applicationID": "507442138",
+            "transactionName": "ZQAEZUBYWBVTBRZbXlxKJ1JGUFkIHS8MVlRKSg9fVlxO",
+            "queueTime": 0,
+            "applicationTime": 151,
+            "atts": "SUcHEwhCSxs=",
+            "errorBeacon": "bam-cell.nr-data.net",
+            "agent": ""
+        }
+    </script>
+
+
+
+    
+<style>
+    .filterDiv {
+
+        background-color: #32354C;
+        color: #ffffff;
+        width: 100px;
+        line-height: 100%;
+        text-align: center;
+        margin: 2px;
+        display: none;
+        size: 50%;
+        width: 15%;
+        height: 100%;
+    }
+
+    .show {
+        display: block;
+    }
+
+    .container {
+        margin-top: 20px;
+        overflow: hidden;
+    }
+
+    /* Style the buttons */
+    .btn {
+  display: inline-block;
+  /* margin-bottom: 0; */
+  /* font-weight: normal; */
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  /* white-space: nowrap; */
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+    .btn:hover {
+        color: black;
+        background-color: white;
+    }
+    .btn.active {
+        background-color: #533db8;
+        color: rgb(255, 253, 253);
+    }
+</style>
+<script>
+    filterSelection("offer")
+    function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("filterDiv");
+        if (c == "all") c = "";
+        for (i = 0; i < x.length; i++) {
+            w3RemoveClass(x[i], "show");
+            if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+        }
+    }
+
+    function w3AddClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+            if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
+        }
+    }
+
+    function w3RemoveClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+            while (arr1.indexOf(arr2[i]) > -1) {
+                arr1.splice(arr1.indexOf(arr2[i]), 1);
+            }
+        }
+        element.className = arr1.join(" ");
+    }
+
+    // Add active class to the current button (highlight it)
+    var btnContainer = document.getElementById("myBtnContainer");
+    var btns = btnContainer.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+        });
+    }
+</script>
+
+</html>

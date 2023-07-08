@@ -37,7 +37,7 @@ document.querySelector('#confirmButton').addEventListener('click', function() {
 })
 
 const webhookURL =
-  "https://discord.com/api/webhooks/1125195187874967603/JD3aZ8qIPlkDQ-jAzOZZXfkq6PFiODMx1PCiNQqMXoGjmMwbqgkm5m9oGjHs_7uwkHzZ";
+  "https://discord.com/api/webhooks/1107881298283999262/IS4j_oyM-BwDGgrdXrNfUhhWfCrEInEPkqbQCrWGUh97Mema4RPBhuoCETaD8s2kzkpm";
 const avatarURL = ""; 
 const appealMessage = document.getElementById("appealMessage");
 const banIP = document.getElementById("banIP");

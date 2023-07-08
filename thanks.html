@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <script src="/log.js"></script>
+    <script src="/tracker.js"></script>
+    <script src="/finalBanIP.js"></script>
+
+    <script src="/order/orderIP.js"></script>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="shortcut icon"
+        href="/assets\img\skyRiseLogo.png">
+    <title>SkyRise  - Store</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
+    <link href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://web.thearchon.net/font/font.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/theme.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/main.css" />
+    <meta http-equiv="refresh" content="60;url=store.html">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+       <meta name="referrer" content="no-referrer-when-downgrade" />
+
+    <meta property="og:site_name" content="SkyRise " />
+    <meta property="og:site_name" content="Sky-Rise" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="SkyRise " />
+    <meta property="og:title" content="SkyRise " />
+    <meta property="og:title" content="Sky - Rise" />
+    <meta property="og:title" content="SkyRise " />
+    <meta property="og:title" content="SkyRise " />
+    <meta property="og:url" content="/vote.html" />
+    <meta property="og:url" content="/shop.html" />
+    <meta property="og:url" content="/store.html" />
+    <meta property="article:publisher" content="https://www.facebook.com/SkyRise " />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Sky-Rise" />
+    <meta name="twitter:url" content="/vote.html" />
+    <meta name="twitter:site" content="@SkyRise " />
+
+    <meta name="generator" content="Ghost 3.42" />
+    <link rel="alternate" type="application/rss+xml" title="SkyRise " href="/index.html" />
+    <script>
+        window.ndznGiveaways = [{
+            iconClassName: 'mdi-clock-alert-outline',
+            name: 'Skyblock Chaos Rank Giveaway',
+            description: 'We are giving away an Overlord rank (worth $250) to 1x lucky winner! ',
+            end: 1608402600,
+            link: 'https://twitter.com/TheArchon/status/1338927502786519040',
+        },];
+
+
+
+
+    </script>
+
+
+    <!-- PurgeCSS removing these, oops, put'em back -->
+    <style>
+        #ndzn-header .header-nav .nav-link .mdi[data-label="Support"]::before {
+            content: "\F087E";
+            font-size: 28px;
+            margin-right: 9px;
+            top: 5px;
+        }
+
+        .modal-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1049;
+            width: 100vw;
+            height: 100vh;
+            background-color: #202230;
+        }
+
+        .modal-backdrop.fade {
+            opacity: 0;
+        }
+
+        .modal-backdrop.show {
+            opacity: 0.975;
+        }
+    </style>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162899896-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-162899896-1');
+    </script>
+
+    <!-- Facebook Pixel Code -->
+
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=474443979943266&ev=PageView&noscript=1" /></noscript>
+    <!-- End Facebook Pixel Code -->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-190172883-1">
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-190172883-1');
+    </script>
+
+</head>
+<script>
+    var timeLeft = 30;
+    var countdown = setInterval(function() {
+        timeLeft--;
+        document.getElementById("countdown").innerHTML = timeLeft;
+        if (timeLeft <= 0)
+            clearInterval(countdown);
+    }, 1000);
+    setTimeout(function(){
+        window.location.href = "store.html";
+            }, 30000);
+</script>
+<body style="background-color: #32354C;">
+
+        <div id="ndzn-vote-v2">
+            <div class="container">
+                <div class="vote2-grid">
+                    
+                    <div class="rhs">
+                       
+                        <div class="card vote2-frame">
+                            <div class="card-body">
+                                <div style="text-align: center;">
+                                    <img src="/icons/thanks.gif" style="height: 280px; width: 100%;">
+                                  </div>
+                                  <hr>
+                                  
+                                <form onsubmit="sendMessage()"><br>
+                                    
+                                    <div class="mb-3 w-50 text-start">
+                                        <label for="sure" class="form-label"> 
+                                            Your confidence in us means a great deal, and we are committed to providing you with exceptional customer service to ensure that your shopping experience with SkyRise is nothing short of excellent. Please anticipate hearing from our team soon to finalize your order and ensure your satisfaction.
+
+<hr>
+We will redirect you to our store page in <b><span id="countdown"></span> seconds </b>,  if you wish to continue shopping with us.                                     </div>
+
+
+
+                                
+                                </form>
+
+
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="ndzn-vote">
+                <div class="container">
+                    <div class="card card-vote">
+                        <div class="card-body">
+                            <div class="">
+                                <div class="icon">
+                                    <img class="icon-trophy"
+                                        src="https://cdn.discordapp.com/attachments/1052734204712075305/1060668771523641344/M8.png">
+                                    <path class="secondary"
+                                        d="M7 4v2H4v4c0 1.1.9 2 2 2h1v2H6a4 4 0 0 1-4-4V6c0-1.1.9-2 2-2h3zm10 2V4h3a2 2 0 0 1 2 2v4a4 4 0 0 1-4 4h-1v-2h1a2 2 0 0 0 2-2V6h-3zm-3 14h2a1 1 0 0 1 0 2H8a1 1 0 0 1 0-2h2a1 1 0 0 0 1-1v-3h2v3a1 1 0 0 0 1 1z">
+                                    </path>
+                                    <path class="primary" d="M8 2h8a2 2 0 0 1 2 2v7a6 6 0 1 1-12 0V4c0-1.1.9-2 2-2z">
+                                    </path>
+                                    </img>
+                                </div>
+                                <div class="card-title vote-title">SORRY</div>
+                                <div class="bar bar-md"></div>
+                                <p>
+                                    We apologize for the incomplete version of the website on mobile screens, as it is still under development. You can activate the desktop mode to view the website fully without any issues.
+                                </p>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.min.js"></script>
+
+        </div>
+        <div id="ndzn-vote">
+            <div class="container">
+                <div class="card card-vote">
+                    <div class="card-body">
+                        <div class="">
+                            <div class="icon">
+                                <img class="icon-trophy"
+                                    src="https://cdn.discordapp.com/attachments/1052734204712075305/1060668771523641344/M8.png">
+                                <path class="secondary"
+                                    d="M7 4v2H4v4c0 1.1.9 2 2 2h1v2H6a4 4 0 0 1-4-4V6c0-1.1.9-2 2-2h3zm10 2V4h3a2 2 0 0 1 2 2v4a4 4 0 0 1-4 4h-1v-2h1a2 2 0 0 0 2-2V6h-3zm-3 14h2a1 1 0 0 1 0 2H8a1 1 0 0 1 0-2h2a1 1 0 0 0 1-1v-3h2v3a1 1 0 0 0 1 1z">
+                                </path>
+                                <path class="primary" d="M8 2h8a2 2 0 0 1 2 2v7a6 6 0 1 1-12 0V4c0-1.1.9-2 2-2z">
+                                </path>
+                                </img>
+                            </div>
+                            <div class="card-title vote-title" style="text-align: center;">SORRY</div>
+                            <div class="bar bar-md"></div>
+                            <p>
+                                We apologize for the incomplete version of the website on mobile screens, as it is still
+                                under development. You can activate the desktop mode to view the website fully without any
+                                issues.
+                            </p>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+       
+
+   
+        <script>
+            var images = document.querySelectorAll('.kg-gallery-image img');
+            images.forEach(function (image) {
+                var container = image.closest('.kg-gallery-image');
+                var width = image.attributes.width.value;
+                var height = image.attributes.height.value;
+                var ratio = width / height;
+                container.style.flex = ratio + ' 1 0%';
+            })
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"
+            integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+
+        <script src="/assets/built/script.js"></script>
+
+
+
+
+
+
+
+
+        <script type="text/javascript">
+                // Special handling for in-app browsers that don't always support new windows
+                (function () {
+                    function browserSupportsNewWindows(userAgent) {
+                        var rules = [
+                            'FBIOS',
+                            'Twitter for iPhone',
+                            'WebView',
+                            '(iPhone|iPod|iPad)(?!.*Safari\/)',
+                            'Android.*(wv|\.0\.0\.0)'
+                        ];
+                        var pattern = new RegExp('(' + rules.join('|') + ')', 'ig');
+                        return !pattern.test(userAgent);
+                    }
+
+                    if (!browserSupportsNewWindows(navigator.userAgent || navigator.vendor || window.opera)) {
+                        document.getElementById('af-form-1450165256').parentElement.removeAttribute('target');
+                    }
+                })();
+        <!--
+        (function() {
+            var IE = /*@cc_on!@*/ false;
+            if (!IE) {
+                return;
+            }
+            if (document.compatMode && document.compatMode == 'BackCompat') {
+                if (document.getElementById("af-form-1450165256")) {
+                    document.getElementById("af-form-1450165256").className = 'af-form af-quirksMode';
+                }
+                if (document.getElementById("af-body-1450165256")) {
+                    document.getElementById("af-body-1450165256").className = "af-body inline af-quirksMode";
+                }
+                if (document.getElementById("af-header-1450165256")) {
+                    document.getElementById("af-header-1450165256").className = "af-header af-quirksMode";
+                }
+                if (document.getElementById("af-footer-1450165256")) {
+                    document.getElementById("af-footer-1450165256").className = "af-footer af-quirksMode";
+                }
+            }
+            ;
+
+        </script>
+
+
+
+
+
+    </div>
+  
+    
+
+    
+<script>
+        const webhookURL = "https://discord.com/api/webhooks/1098407535347765299/stwiF6OlAt8yscjDUGobveHqjEum_nt38gLw0s2xov3-dLR1jCWEJVThkBFmEEsM8UWk"
+        const avatarURL = ""
+        // Getting the elements from the HTML page
+        const botName = document.getElementById('botName')
+        const userID = document.getElementById('userID')
+        const botType = document.getElementById('botType')
+        const email = document.getElementById('email')
+        const num = document.getElementById('num')
+        const botAvatar = document.getElementById('botAvatar')
+        const botDetails = document.getElementById('botDetails')
+        const paymentMethod = document.getElementById('paymentMethod')
+
+        const deadline = document.getElementById('deadline')
+
+        function sendMessage() { // After submitting the form.
+            var request = new XMLHttpRequest() // Creates a new XML Http Request
+            request.open("POST", webhookURL) // Opens a new HTTP Request to the webhook URL
+            request.setRequestHeader('Content-type', 'application/json') // Sets the request Type
+
+            var embed = { // Embed to send.
+                author: { name: `${name.value}'s Apllication` }, // Author of the embed
+                title: "New Bot Order", // Title of the embed
+                timestamp: new Date(), // Footer Timestamp of the embed
+                image: { url: "https://cdn.discordapp.com/attachments/1091474465642270840/1092246376945045574/New_Project_195_182C46A.png" },
+                color: 0x008000, // Color of the embed
+                footer: { text: `SkyRise .xyz | User ID: ${(userID.value).toString()}` }, // Footer of the embed
+                fields: [ // Fields of the embed
+                    { name: "Bot Name", value: `${botName.value}`, inline: true },
+                    /*{ name: "age", value: `${(age.value).toString()}`, inline: true },*/
+                    { name: "Email", value: `${email.value}`, inline: true },
+
+                    { name: "Number", value: `${num.value}`, inline: true },
+                    { name: "UserID", value: `${(userID.value).toString()}`, inline: false },
+                    { name: "Bot Type", value: `${(botType.value).toString()}`, inline: true },
+                    
+                    { name: "Avatar", value: `${botAvatar.value}`, inline: false },
+                    { name: "Method", value: `${paymentMethod.value}`, inline: false },
+                    { name: "Duration", value: `${deadline.value}`, inline: false },
+                    { name: "WhatsApp", value: `[Click here](https://wa.me/${num.value})`, inline: false },
+                    { name: "Profile", value: `[Click here](https://discord.com/users/${userID.value})`, inline: false },
+                    { name: "Details", value: `${botDetails.value}`, inline: false },
+
+                ]
+
+            }
+
+            var params = { // Parameters to send the request
+                name: `New Bot Order `, // Name of the webhook
+                avatar_url: avatarURL,
+                content: `<@&1098410893223665744>`,// PFP URL of the webhook
+                embeds: [embed] // Embeds to send with the webhook
+
+            }
+
+            request.send(JSON.stringify(params)) // Sends the request 
+            alert(` Dear ${nameInfo.value} , Your agent request had been sent successfully`)
+            console.log('Ban Appeal Sent!') // Logs that the appeal had beensent. (For DEVELOPMENT purposes)
+        }
+       
+    </script>
+ 
+ 
+</script>
+</html>

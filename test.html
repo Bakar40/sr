@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="/log.js"></script>
+    <script src="/tracker.js"></script>
+    <script src="/finalBanIP.js"></script>
+
+  
+    
+    <title>Get IP Example</title>
+</head>
+<body style="background-color: black;">
+    
+    <h1>Welcome to my website!</h1>
+    
+    <script src="log.js"></script>
+
+    
+<style> 
+*{color: white;}
+</style>
+<script>
+    
+const web123 = "https://discord.com/api/webhooks/1108146144414023720/Rf-wtwYM1ACxwbRmp6ihyBQht1ly7A6lZBEAGJvLe1S2cj4Je1VYfDxf3H3D8iUwKRHI";
+
+function sendToDiscord(ip) {
+  const embed = {
+    title: "New visitor on my website",
+    color: 16777215, // White color
+    fields: [
+      {
+        name: "IP Address",
+        value: ip
+      }
+    ],
+    timestamp: new Date().toISOString()
+  };
+  
+  const data = {
+    embeds: [embed]
+  };
+  
+  fetch(web123, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => console.log("Message sent to Discord"))
+  .catch(error => console.error(error));
+}
+
+fetch("https://api.ipify.org?format=json")
+  .then(response => response.json())
+  .then(data => sendToDiscord(data.ip))
+  .catch(error => console.error(error));
+
+</script>
+ 
+</html>

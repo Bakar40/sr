@@ -631,7 +631,7 @@
     <div id="ndzn-header">
         <div class="container">
             <div class="header-top">
-                <a href="/index.html" class="top-left button-forums" onmouseenter="playSound2()">
+                <a href="https://skyrise.site" class="top-left button-forums" onmouseenter="playSound2()">
                     <div class="mdi mdi-play-circle-outline"></div>
                     <div class="box-text-left">
                         <span class="big">GO BACK</span>

@@ -740,7 +740,7 @@
 
                         <div class="nav-body">
 
-                            <a href="/index.html" class="mobile-nav-link option" data-special="Transfers">
+                            <a href="https://skyrise.site/" class="mobile-nav-link option" data-special="Transfers">
                                 <span class="cat-icon"
                                     style="margin-left: 5px; margin-left: 10px; background-image:url(https://cdn.discordapp.com/attachments/1093433006678626324/1094698389876256878/home.png)"></span>
                                 <span class="box-text">Home</span>

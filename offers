@@ -3,9 +3,7 @@
 <html lang="en">
 
 <head>
-    <script src="/log.js"></script>
-    <script src="/tracker.js"></script>
-    <script src="/finalBanIP.js"></script>
+   
 
   
     
@@ -130,7 +128,7 @@
     <div id="ndzn-header">
         <div class="container">
             <div class="header-top">
-                <a href="/index.html" class="top-left button-forums">
+                <a href="https://skyrise.site" class="top-left button-forums">
                     <div class="mdi mdi-play-circle-outline"></div>
                     <div class="box-text-left">
                         <span class="big">GO BACK</span>
@@ -509,5 +507,7 @@
 </script>
 
 <script src="countdown.js"></script>
-
+ <script src="/log.js"></script>
+    <script src="/tracker.js"></script>
+    <script src="/finalBanIP.js"></script>
 </html>

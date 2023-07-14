@@ -296,7 +296,7 @@
                                                 <div class="package ndzn-ajax-package filterDiv valid">
                                                     <div style="display: flex; justify-content: center; align-items: center; height: 150px; width: 200px;"
                                                         class="package-image ndzn-js--toggleModal toggle-tooltip ">
-                                                        <img onclick="zoomImage(this)" src="/offers/1.png"
+                                                        <img onclick="zoomImage(this)" src="/offer/1.png"
                                                             style="height: 165px; width: 500px;" />
                                                     </div>
                                                     <span class="package-expires">
@@ -325,7 +325,7 @@
                                                 <div class="package ndzn-ajax-package filterDiv valid">
                                                     <div style="display: flex; justify-content: center; align-items: center; height: 150px; width: 200px;"
                                                         class="package-image ndzn-js--toggleModal toggle-tooltip ">
-                                                        <img onclick="zoomImage(this)" src="/offers/2.png"
+                                                        <img onclick="zoomImage(this)" src="/offer/2.png"
                                                             style="height: 165px; width: 500px;" />
                                                     </div>
                                                     <span class="package-expires">
@@ -354,7 +354,7 @@
                                                 <div class="package ndzn-ajax-package filterDiv valid">
                                                     <div style="display: flex; justify-content: center; align-items: center; height: 150px; width: 200px;"
                                                         class="package-image ndzn-js--toggleModal toggle-tooltip ">
-                                                        <img onclick="zoomImage(this)" src="/offers/3.png"
+                                                        <img onclick="zoomImage(this)" src="/offer/3.png"
                                                             style="height: 165px; width: 500px;" />
                                                     </div>
                                                     

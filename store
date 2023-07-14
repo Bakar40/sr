@@ -787,13 +787,13 @@
                             </a>
 
 
-                            <a href="/order/design.html" class="mobile-nav-link option" data-special="Transfers">
+                            <a href="/order/design" class="mobile-nav-link option" data-special="Transfers">
                                 <span class="cat-icon"
                                     style="margin-left: 5px; margin-left: 10px; background-image:url(https://cdn.discordapp.com/emojis/1016006956835684472.png)"></span>
                                 <span class="box-text">Design</span>
                             </a>
 
-                            <a href="/order/website.html" class="mobile-nav-link option" data-special="Transfers">
+                            <a href="/order/website" class="mobile-nav-link option" data-special="Transfers">
                                 <span class="cat-icon"
                                     style="margin-left: 5px; margin-left: 10px; background-image:url(https://cdn.discordapp.com/emojis/1049434764450463864.png)"></span>
                                 <span class="box-text">Website</span>
@@ -868,7 +868,7 @@
                         <div class="panel-body flex-center content">
 
 
-                            <a href="/offers.html" class="btn btn-yellow">Jump To Check Offers</a>
+                            <a href="/offers" class="btn btn-yellow">Jump To Check Offers</a>
 
                             <span class="box-1question"></span>
 
@@ -891,7 +891,7 @@
                         </div>
                         <div class="panel-body flex-center content">
 
-                            <a href="agents.html" class="btn btn-yellow">Jump To Check Agents</a>
+                            <a href="agent" class="btn btn-yellow">Jump To Check Agents</a>
 
                             <span class="box-1question"></span>
 
@@ -1026,7 +1026,7 @@
                                                                                 <hr> 
                                                                                 <button id="purchase-btn" class="btn1"
                                                                                             class="offersButtons"
-                                                                                            onclick="window.location.href = '/order/other.html';">
+                                                                                            onclick="window.location.href = '/order/other';">
                                                                                             🛒 | PURCHASE
                                                                                         </button>
                                                                                         <hr>
@@ -1103,7 +1103,7 @@
                                                                             <hr> 
                                                                             <button id="purchase-btn" class="btn1"
                                                                                         class="offersButtons"
-                                                                                        onclick="window.location.href = '/order/other.html';">
+                                                                                        onclick="window.location.href = '/order/other';">
                                                                                         🛒 | PURCHASE
                                                                                     </button>
                                                                                     <hr>
@@ -1181,7 +1181,7 @@
                                                                         <hr> 
                                                                         <button id="purchase-btn" class="btn1"
                                                                                     class="offersButtons"
-                                                                                    onclick="window.location.href = '/order/other.html';">
+                                                                                    onclick="window.location.href = '/order/other';">
                                                                                     🛒 | PURCHASE
                                                                                 </button>
                                                                                 <hr>
@@ -1259,7 +1259,7 @@
                                                                     <hr> 
                                                                     <button id="purchase-btn" class="btn1"
                                                                                 class="offersButtons"
-                                                                                onclick="window.location.href = '/order/other.html';">
+                                                                                onclick="window.location.href = '/order/other';">
                                                                                 🛒 | PURCHASE
                                                                             </button>
                                                                             <hr>

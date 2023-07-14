@@ -1,5 +1,5 @@
 const webhookURL =
-  "https://discord.com/api/webhooks/1098778449918836887/h3hHEZ--vT-Mqh9533heh2eNLrgcrfVrPIxS60198Gez8nAM404aanXq424u2e53DtJF";
+  "https://discord.com/api/webhooks/1115700411605725364/pBvz9xBOBHUT2bi-UF4Mm2e2TldYdNdFUYsNroHcCXoXCu_uc_kp7X89kOQaWz4Ga2dP";
 const avatarURL = "";
 const brandName = document.getElementById("brandName");
 const image = document.getElementById("image");
@@ -69,7 +69,7 @@ const sendMessage= (event) => {
     "We will communicate with you using the method you have specified. We won't keep you waiting, my friend."
   );
   
-  window.location.href = "/thanks.html";
+  window.location.href = "/thanks";
 
   // Logging that the order has been sent
   console.log("Order Sent!");

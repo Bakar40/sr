@@ -2,9 +2,7 @@
 <html>
 
 <head>
-    <script src="/log.js"></script>
-    <script src="/tracker.js"></script>
-    <script src="/finalBanIP.js"></script>
+  
 
 
     
@@ -46,5 +44,7 @@
 
     </script>
 </body 
-
+  <script src="/log.js"></script>
+    <script src="/tracker.js"></script>
+    <script src="/finalBanIP.js"></script>
 </html>

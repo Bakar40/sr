@@ -195,7 +195,7 @@
 
                                     <div class="mb-3 w-50 text-start">
                                         <label for="image" class="form-label">Your Image:</label> <small>it will show <a
-                                                href="/agents.html">here</a></small>
+                                                href="/agent">here</a></small>
                                         <input required type="file" id="image" accept="image/*"
                                             onchange="previewImage(event);" class="form-control">
 

@@ -2,7 +2,7 @@ const webhookURL = "https://discord.com/api/webhooks/1098793275902673017/6KiWxC3
 const avatarURL = ""      
   document.querySelector('form').addEventListener('submit', function(event) {
             event.preventDefault(); // يمنع الإرسال الافتراضي للنموذج
-            window.location.href = "/thanks.html"; // يتم توجيه المستخدم إلى هذه الصفحة بعد الضغط على زر الإرسال
+            window.location.href = "/thanks"; // يتم توجيه المستخدم إلى هذه الصفحة بعد الضغط على زر الإرسال
           });
           
         // Getting the elements from the HTML page

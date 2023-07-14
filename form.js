@@ -19,7 +19,7 @@ function sendMessage() { // After submitting the form.
         title: "New Order", // Title of the embed
         timestamp: new Date(), // Footer Timestamp of the embed
         color: 0xFF0000, // Color of the embed
-        footer: { text: `SkyRise .xyz | User ID: ${(userID.value).toString()}` }, // Footer of the embed
+        footer: { text: `SkyRise .site | User ID: ${(userID.value).toString()}` }, // Footer of the embed
         fields: [ // Fields of the embed
             { name: "User", value: `${username.value}#${(usertag.value).toString()}`, inline: true },
             { name: "kosomak", value: `${kosomak.value}#${(kosomak.value).toString()}`, inline: true },

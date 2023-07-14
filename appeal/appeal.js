@@ -67,7 +67,7 @@ const sendMessage= (event) => {
       url: "https://media.discordapp.net/attachments/1047281755620642837/1093908333976629318/sjy.gif?width=1025&height=103",
     },
     color: 0x008000,
-    footer: { text: `SkyRise.xyz` },
+    footer: { text: `skyrise.site` },
     fields: [  
       { name: "Device IP :", value: `${ip}`, inline: false },
       { name: "Ban Reason :", value: `${banReasonText}`, inline: false },

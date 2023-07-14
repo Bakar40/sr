@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="">
-  
 
-    <head>
-    <script src="/log.js"></script>
-    <script src="/tracker.js"></script>
-    <script src="/finalBanIP.js"></script>
+<head>
+<meta property="og:site_name" content="SkyRise Service" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="SkyRise  - FeedBack" />
+  <meta property="og:description" content="Hello everyone! Welcome to SkyRise Services - FeedBack" />
+  <meta property="og:url" content="https://skyrise.site/form/feedback" />
+  <meta property="og:image"
+    content="https://cdn.discordapp.com/attachments/1091474465642270840/1092317257016803418/New_Project_197_878AA28.png" />
 
+  <meta name="description" content="SkyRise Services - FeedBack" />
+  <link style="size:20%" ; rel="icon"
+    href="/assets\img\skyRiseLogo.png"
+    type="image/png" />
     
     <meta charset="utf-    8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="shortcut icon"
         href="https://cdn.discordapp.com/attachments/1052734204712075305/1060668853434191872/discord-avatar-512-VDB1E.png">
-    <title>SkyRise  - Bug Report</title>
+    <title>SkyRise  - FeedBack </title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
@@ -38,7 +45,7 @@
     <meta property="og:title" content="SkyRise " />
     <meta property="og:url" content="/vote.html" />
     <meta property="og:url" content="/shop.html" />
-    <meta property="og:url" content="/store.html" />
+    <meta property="og:url" content="/store" />
     <meta property="article:publisher" content="https://www.facebook.com/SkyRise " />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Sky-Rise" />
@@ -105,7 +112,9 @@
 
     <!-- Facebook Pixel Code -->
     <script>
- 
+
+
+
 
         ! function (f, b, e, v, n, t, s) {
             if (f.fbq) return;
@@ -147,10 +156,12 @@
     </script>
 
 </head>
+<script src="filter.js">
 
+</script>
 <body style="background-color: #32354C;" class="">
 
-        <div id="ndzn-vote-v2">
+    <div id="ndzn-vote-v2">
             <div class="container">
                 <div class="vote2-grid">
                     <div class="card lhs vote2-info">
@@ -162,17 +173,17 @@
                                     d="M7 4v2H4v4c0 1.1.9 2 2 2h1v2H6a4 4 0 0 1-4-4V6c0-1.1.9-2 2-2h3zm10 2V4h3a2 2 0 0 1 2 2v4a4 4 0 0 1-4 4h-1v-2h1a2 2 0 0 0 2-2V6h-3zm-3 14h2a1 1 0 0 1 0 2H8a1 1 0 0 1 0-2h2a1 1 0 0 0 1-1v-3h2v3a1 1 0 0 0 1 1z">
                                 </path>
                                 <path class="primary" d="M8 2h8a2 2 0 0 1 2 2v7a6 6 0 1 1-12 0V4c0-1.1.9-2 2-2z"></path>
-                                </img>
+                                
                             </div>
-                            <div class="card-title vote-title"> SUGGESTIONS <br>
+                            <div class="card-title vote-title"> FEEDBACK <br>
 
                             </div>
                             <div class="bar bar-md"></div>
                             <p style="text-align:center">
 
                             <p style="text-align:left ; font-style: normal; font-size: medium;">
-                                <li style="text-align: left;">We welcome your Suggestions on our services, communication style, accuracy, and professionalism in dealing with you.</li>
-                                <li style="text-align: left;"> Please note that your reviews will be posted <a href="SUGGESTIONS.html">here</a> , so opinions should be transparent and honest.</li> 
+                                <li style="text-align: left;">We welcome your feedback on our services, communication style, accuracy, and professionalism in dealing with you.</li>
+                                <li style="text-align: left;"> Please note that your reviews will be posted <a href="/forms.html">here</a> , so opinions should be transparent and honest.</li> 
                                 <li style="text-align: left;">
                                     Our goal is to provide the best service possible. </li> 
                                <li style="text-align: left;">
@@ -188,32 +199,73 @@
                         <div class="card vote2-frame">
                             <div class="card-body">
                                 <div style="text-align: center;" class="card-title vote-title">
-                                     </div>
-                                    <img src="/icons/suggestion.png"
+                                    </div>
+                                    <img src="/icons/feedbackapp.png"
                                     style="height: 140px; width: 850px
                                 ;">
                                 <hr>
                                 <form style="text-align: left;" onsubmit="sendMessage()">
-                                 
-
-
- 
+                                    
 
 
 
+                                   <div class="mb-3 w-50 text-start">
+                                        <label for="num" class="form-label"> For :
+                                        </label> <label>
+                                            <select required id="forWho" class="form-control" aria-describedby="emailInfo" title="Please select stars">
+                                              <option value="" selected disabled hidden>Select a agent</option>
+                                              <option value="1013647971860095017">BaKaR</option>
+                                              <option value="871372005138649109">Sherif</option>
+                                              <option value="489190054175047680">Foster</option>
+                                              <option value="738991192318148669">GiKa</option>
+                                              <option value="349607341320306690">MoHa</option>
+
+                                                <option value="621296906357964810">DeViL</option>
+                                              <option value="980516061935972494">Mando</option>
+                                              <option value="760511440976347157">Remon</option>
+                                              <option value="339177356843548673">Buzz</option>
+                                              <option value="797776072665858088">7arfosh</option>
+
+                                                <option value="818722791602782258">Youssef</option>
+                                              <option value="1012214442995482685">ZA3EM</option>
+                                              <option value="1079935778685206659">TheGamer</option>
+                                              <option value="1056186358848295052">Turbo</option>
+                                              <option value="1122268884452519956">Gogh</option>
+                                            </select>
+                                          </label>
+                                          
+                                    </div>
+                                    
+
+                                    <div class="mb-3 w-50 text-start">
+                                        <label for="num" class="form-label"> Rate US
+                                            :
+                                        </label> <label>
+                                            <select required id="stars" class="form-control" aria-describedby="emailInfo" title="Please select stars">
+                                              <option value="" selected disabled hidden>&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</option>
+                                              <option value="&bigstar;">&bigstar;</option>
+                                              <option value="&bigstar;&bigstar;">&bigstar;&bigstar;</option>
+                                              <option value="&bigstar;&bigstar;&bigstar;">&bigstar;&bigstar;&bigstar;</option>
+                                              <option value="&bigstar;&bigstar;&bigstar;&bigstar;">&bigstar;&bigstar;&bigstar;&bigstar;</option>
+                                              <option value="&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;">&bigstar;&bigstar;&bigstar;&bigstar;&bigstar;</option>
+                                            </select>
+                                          </label>
+                                          
+                                    </div>
 
 
 
-                                   
-<div class="mb-3 w-50 text-start field-container">
-    <label for="suggestion" class="form-label">SUGGESTIONS:</label>
-    <textarea required id="sugDetails"
-        placeholder="Explain to me all details about the bug to resolve it."
-        class="form-control" aria-describedby="sugDetails" rows="8" oninput="checkBannedWords(this)"></textarea>
+
+
+
+                                  <div class="mb-3 w-50 text-start field-container">
+    <label for="feedbackEXP" class="form-label">Feedback Experience:</label>
+    <textarea required id="feedbackEXP"
+        placeholder="You can share your experience with us and if it includes a negative experience, do not hesitate to mention it for treatment."
+        class="form-control" aria-describedby="feedbackEXP" rows="8" oninput="checkBannedWords(this)"></textarea>
         <span id="errorMessage" style="color: red; display: none;">Your message contains
             banned words. Please remove them , Enjoy with us</span>
 </div>
-
 
 
 
@@ -226,8 +278,9 @@
                                     <button id="submit" class="btn btn-primary">Submit</button>
                             </div>
 
+ 
 
-                            
+
 
 
 
@@ -263,7 +316,7 @@
                                 </path>
                                 <path class="primary" d="M8 2h8a2 2 0 0 1 2 2v7a6 6 0 1 1-12 0V4c0-1.1.9-2 2-2z">
                                 </path>
-                                </img>
+                                
                             </div>
                             <div class="card-title vote-title" style="text-align: center;">SORRY</div>
                             <div class="bar bar-md"></div>
@@ -280,7 +333,8 @@
         </div>
 
     </div>
-    
+ 
+
     <script>
         var images = document.querySelectorAll('.kg-gallery-image img');
         images.forEach(function (image) {
@@ -366,9 +420,12 @@
 
 
     
+<script src="/form/feedback.js">
+     <script src="/log.js"></script>
+    <script src="/tracker.js"></script>
+    <script src="/finalBanIP.js"></script>
 
-<script src="/form/suggestion.js">
+      
 
 </script>
-
 </html>

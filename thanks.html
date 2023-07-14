@@ -21,7 +21,7 @@
     <link rel="stylesheet" type="text/css" href="/assets/built/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="/assets/built/theme.css" />
     <link rel="stylesheet" type="text/css" href="/assets/built/main.css" />
-    <meta http-equiv="refresh" content="60;url=store.html">
+    <meta http-equiv="refresh" content="60;url=store">
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
        <meta name="referrer" content="no-referrer-when-downgrade" />
 
@@ -35,7 +35,7 @@
     <meta property="og:title" content="SkyRise " />
     <meta property="og:url" content="/vote.html" />
     <meta property="og:url" content="/shop.html" />
-    <meta property="og:url" content="/store.html" />
+    <meta property="og:url" content="/store" />
     <meta property="article:publisher" content="https://www.facebook.com/SkyRise " />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Sky-Rise" />
@@ -130,7 +130,7 @@
             clearInterval(countdown);
     }, 1000);
     setTimeout(function(){
-        window.location.href = "store.html";
+        window.location.href = "store";
             }, 30000);
 </script>
 <body style="background-color: #32354C;">
@@ -346,7 +346,7 @@ We will redirect you to our store page in <b><span id="countdown"></span> second
                 timestamp: new Date(), // Footer Timestamp of the embed
                 image: { url: "https://cdn.discordapp.com/attachments/1091474465642270840/1092246376945045574/New_Project_195_182C46A.png" },
                 color: 0x008000, // Color of the embed
-                footer: { text: `SkyRise .xyz | User ID: ${(userID.value).toString()}` }, // Footer of the embed
+                footer: { text: `SkyRise .site | User ID: ${(userID.value).toString()}` }, // Footer of the embed
                 fields: [ // Fields of the embed
                     { name: "Bot Name", value: `${botName.value}`, inline: true },
                     /*{ name: "age", value: `${(age.value).toString()}`, inline: true },*/

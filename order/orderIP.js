@@ -36,7 +36,7 @@ fetch("https://api.ipify.org?format=json")
   // Check if the user is logged in
 if (!sessionStorage.getItem('isLoggedIn')) {
   // Redirect the user to the login page if they are not logged in
-  window.location.href = '/login.html';
+  window.location.href = '/signin';
 }
 
 

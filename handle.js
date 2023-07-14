@@ -1,5 +1,5 @@
    if (!sessionStorage.getItem('isLoggedIn')) {
-        window.location.href = '/login.html';
+        window.location.href = '/signin';
       }
       // تحديد عنوان IP الخاص بالمستخدم
       const staffIPs = ['154.239.126.151', '10.0.0.1', '172.16.0.1'];

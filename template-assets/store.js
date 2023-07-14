@@ -124,7 +124,7 @@ $(function() {
             document.body.style.marginRight = "".concat(n, "px"), document.body.style.overflow = "hidden", $("#ndzn-bg").css("left", "-".concat(n / 2, "px"))
         } else document.body.style.marginRight = "", document.body.style.overflow = "", $("#ndzn-bg").css("left", "")
     }, window.ndzn_core = {
-        server_ip: "mognetwork",
+        server_ip: "skyrise",
         discord_invite_link: "https://discord.gg/byDuefKBdE",
         discord_api_key: "267615559712112640"
     }, $(".ndzn-js--copyip").length && ndzn_core.server_ip.length && new ClipboardJS(".ndzn-js--copyip", {

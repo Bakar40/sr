@@ -1,5 +1,5 @@
 const webhookURL =
-  "https://discord.com/api/webhooks/1098793275902673017/6KiWxC3FRfQM9YWMIw0ob42A0Y4c1XbFYeIyus3SUcg0dALP4MSWYFHCWQ0dG4Vh-kLi";
+  "https://discord.com/api/webhooks/1115701224759640224/XF-7qow-imwXEzZsGFCs0HrLDnNgfD4AZa1_Gq30pNdPjWK8Mn7V8hfuZybcAxXWhBd9";
 const avatarURL = "";
  
 const contact = document.getElementById("contact");
@@ -26,21 +26,21 @@ const sendMessage= (event) => {
     },
     color: 0x008000,
 
-    footer: { text: `SkyRise.xyz` },
+    footer: { text: `skyrise.site` },
     fields: [
      
-      { name: "contact :", value: `${contact.value}`, inline: true },
-      { name: "contact1 :", value: `${contact1.value}`, inline: true },
-      { name: "reportForm :", value: `${reportForm.value}`, inline: true },
+      { name: "Contact Method :", value: `${contact.value}`, inline: true },
+      { name: "Contact Details :", value: `${contact1.value}`, inline: true },
+      { name: "Report Details :", value: `${reportForm.value}`, inline: false },
  
     ],
   };
 
   // Setting the parameters to send with the request
   const params = {
-    username: `Bug Report `,
+    username: `SkyRise | Bug Report `,
     avatar_url: avatarURL,
-    content: `<@&1098770386302287872>`,
+    content: `<@&1098770356904402956>`,
     embeds: [embed],
   };
 
@@ -48,7 +48,7 @@ const sendMessage= (event) => {
   request.send(JSON.stringify(params));
 
   // Notifying the user that the order has been sent
-  alert(`Dear , your report has been sent successfully.`);
+  alert(`Thank You , your report has been sent successfully.`);
     alert(
     "We will communicate with you using the method you have specified. We won't keep you waiting, my friend."
   );
@@ -65,7 +65,7 @@ function checkContact() {
 
   if (contact === "Email") {
     contactInfo.disabled = false;
-    contactInfo.placeholder = "Enter your email | hi@SkyRise.xyz";
+    contactInfo.placeholder = "Enter your email | hi@skyrise.site";
     contactInfo.pattern = "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
   } else if (contact === "WhatsApp") {
     contactInfo.disabled = false;
@@ -74,12 +74,12 @@ function checkContact() {
   } else if (contact === "Discord") {
     contactInfo.disabled = false;
     contactInfo.placeholder = "Enter your Discord username and tag (e.g. BaKaR#5213)";
-    contactInfo.pattern = "";
+
   } else {
     contactInfo.disabled = true;
     contactInfo.value = "";
     contactInfo.placeholder = "";
-    contactInfo.pattern = "";
+ 
   }
 }
  

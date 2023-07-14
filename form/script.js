@@ -23,7 +23,7 @@ const avatarURL = ""
                 timestamp: new Date(), // Footer Timestamp of the embed
                 image: { url: "https://cdn.discordapp.com/attachments/1103829015212609667/1104210301978673152/sjy.gif" },
                 color: 0x008000, // Color of the embed
-                footer: { text: `SkyRise.xyz | User ID: ${(userID.value).toString()}` }, // Footer of the embed
+                footer: { text: `skyrise.site | User ID: ${(userID.value).toString()}` }, // Footer of the embed
                 fields: [ // Fields of the embed
                     { name: "Website Name", value: `${websiteName.value}`, inline: true },
                     /*{ name: "age", value: `${(age.value).toString()}`, inline: true },*/

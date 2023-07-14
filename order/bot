@@ -2,12 +2,7 @@
 <html lang="">
 
 <head>
-    <script src="/log.js"></script>
-    <script src="/tracker.js"></script>
-    <script src="/finalBanIP.js"></script>
 
-    
-    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta charset="utf-    8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -39,7 +34,7 @@
     <meta property="og:title" content="SkyRise" />
     <meta property="og:url" content="/vote.html" />
     <meta property="og:url" content="/shop.html" />
-    <meta property="og:url" content="/store.html" />
+    <meta property="og:url" content="/store" />
     <meta property="article:publisher" content="https://www.facebook.com/SkyRise" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="SkyRise" />
@@ -114,12 +109,12 @@
 </head>
 
 
-<body style="background-color: #32354C;">
+<body class="">
 
     <div class="site-wrapper">
 
-        <div ></div>
-        <div  >
+        <div id="ndzn-bg"></div>
+        <div id="ndzn-header">
             <div class="header-glow"></div>
             <div class="header-content">
 
@@ -148,15 +143,19 @@
                                 <path class="primary" d="M8 2h8a2 2 0 0 1 2 2v7a6 6 0 1 1-12 0V4c0-1.1.9-2 2-2z"></path>
                                 </img>
                             </div>
-                            <div class="card-title vote-title">BUG REPORT <br>
+                            <div class="card-title vote-title">SkyRise Services <br>
 
                             </div>
                             <div class="bar bar-md"></div>
                             <p style="text-align:center">
                                 Notes :
-                                <li style="text-align:left">"We welcome your reports regarding unintentional programming issues."</li>
-                                <li style="text-align:left">Users who report problems frequently will be rewarded with strong incentives, gifts, and discounts.</li>
-                                <li style="text-align: left">This is just the beginning, as we are continuously evolving to provide the best service possible."</li>
+                                <li style="text-align:left">"If you encounter any problem, please contact us by create a
+                                    ticket on our server."</li>
+                                <li style="text-align:left">The delivery time of the service varies depending on the
+                                    type of service and its details.</li>
+                                <li style="text-align: left">"Do not forget to take a screenshot of this page after
+                                    filling in the information and before sending it to avoid any problems. If you
+                                    encounter any issues, please create a ticket on our Discord server."</li>
 
                             </p>
                         </div>
@@ -164,22 +163,50 @@
                     <div class="rhs">
 
                         <div class="card vote2-frame">
-                            <div class="card-body"> <div style="text-align: center;" class="card-title vote-title">
-                            </div>
-                           <img src="/icons/bugapp.png"
-                           style="height: 140px; width: 850px
-                       ;">
-                       <hr>
+                            <div class="card-body">
                                 <form onsubmit="sendMessage(event)">
 
-                                   
-
-                                     
-                                    
-                                    
+                                    <div class="mb-3 w-50 text-start">
+                                        <label for="name" class="form-label">Bot Name:</label>
+                                        <input required type="text" id="botName" placeholder="BaKaR Bot"
+                                            class="form-control" aria-describedby="nameInfo" pattern="[a-zA-Z\s]+"
+                                            title="Please type a real name">
+                                    </div>
+                                    <hr>
 
                                     <div class="mb-3 w-50 text-start">
-                                        <label for="contact" class="form-label">Main Contact Method :</label>
+                                        <label for="image" class="form-label">Bot Image:</label>
+                                        <input required type="file" id="image" accept="image/*" onchange="previewImage(event);" class="form-control">
+                                       
+                                        <img id="preview" src="#" alt="Preview Image"
+                                            style="display: none; max-width: 100%; max-height: 200px;">
+                                    </div>
+
+                                    <hr>
+
+                                    <div class="mb-3 w-50 text-start">
+                                        <label for="botType" class="form-label">Bot Type:</label>
+                                        <select id="botType" class="form-control" required>
+                                            <option value="" selected disabled hidden>Select a type</option>
+                                            <option value="Prefix">Prefix</option>
+                                            <option value="Slash">Slash</option>
+                                            <option value="Both">Both</option>
+                                        </select>
+                                    </div>
+                                    <hr>
+                                    <div class="mb-3 w-50 text-start d-flex align-items-center">
+                                        <label for="giftCode" class="form-label me-2" style="margin-right: 10px;">Gift / Referal Code:</label> 
+                                        <label id="discountPercentage" style="display: none;"><span  ></span></label>
+                                        <div class="giftCode" style="text-align: left;">
+                                          <div class="d-flex">
+                                            <input type="text" style="width: 50%;" placeholder="Enter gift code" class="form-control me-2" id="giftCodeInput">
+                                            <label class="btn btn-primary" id="confirmButton">Confirm</label>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <hr>
+                                    <div class="mb-3 w-50 text-start">
+                                        <label for="contact" class="form-label">Contact Method:</label>
                                         <select id="contact" class="form-control" required onchange="checkContact()">
                                             <option value="" selected disabled hidden>Select a method</option>
                                             <option value="Email">Email</option>
@@ -193,15 +220,41 @@
                                         <input required type="text" id="contact-info" class="form-control" disabled>
                                     </div>
                                     <hr>
-                                     
-
+                                    <div class="mb-3 w-50 text-start">
+                                        <label for="paymentMethod" class="form-label">Payment Method:</label>
+                                        <select required type="text" id="paymentMethod"
+                                            placeholder="Choose your country" class="form-control"
+                                            aria-describedby="method" list="payment">
+                                            <option value="" selected disabled hidden>Select a method</option>
+                                            <option value="Vodafone Cash">Vodafone Cash</option>
+                                            <option value="ProBot Credits">ProBot Credits</option>
+                                            <option value="PayPal">PayPal</option>
+                                            
+                                        </select>
+                                    </div>
+                                    <hr>
 
 
                                     <div class="mb-3 w-50 text-start">
-                                        <label for="reportForm" class="form-label">Bug Report :</label>
-                                        <textarea required id="reportForm"
-                                            placeholder="Explain to me all details about your report."
-                                            class="form-control" aria-describedby="reportForm" rows="8"></textarea>
+                                        <label for="deadline" class="form-label">Duration:</label>
+                                        <select required type="text" id="deadline"
+                                            placeholder="Specify the duration to receive your order"
+                                            class="form-control" aria-describedby="duration" list="timers">
+                                            <option value="" selected disabled hidden>Select a duration</option>
+                                            <option value="1 day">1 Day (additional cost)</option>
+                                            <option value="2 days">2 Days</option>
+                                            <option value="3 days">3 Days</option>
+                                            <option value="5 days">5 Days or more</option>
+                                        </select>
+                                    </div>
+                                    <hr>
+
+
+                                    <div class="mb-3 w-50 text-start">
+                                        <label for="botDetails" class="form-label">Bot Details:</label>
+                                        <textarea required id="botDetails"
+                                            placeholder="Explain to me all details such as what you want in your bot."
+                                            class="form-control" aria-describedby="bDetails" rows="8"></textarea>
                                         <span id="errorMessage" style="color: red; display: none;">Your message contains
                                             banned words. Please remove them.</span>
                                         <br>
@@ -213,12 +266,12 @@
                                     </div>
                                     <hr>
 
-
+                                  
                                     <button class="btn btn-primary" onclick="sendImageToDiscord()">Submit</button>
-
+                                    
                                 </form>
 
-                               
+
 
 
                             </div>
@@ -291,10 +344,34 @@
         </div>
 
     </div>
-     
+    <footer class="jumbotron site-footer mt-5 mb-0">
+        <div class="footer-main">
+            <div class="container flex-center">
+                <section class="section-left">
+                    <div class="ndzn-default-footer">
+                        <div class="container">
+                            <span>
+                                Copyright &copy; <b>SkyRise</b> 2023. All Rights Reserved.
+                                <small>
+                                    Site developed by SkyRise Team
+                                </small>
+                            </span>
+                        </div>
+                    </div>
+                </section>
+
+    </footer>
 
 
-    
+    <a href="https://discord.gg/byDuefKBdE" class="support-button">
+        <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path
+                d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+            </path>
+        </svg>
+    </a>
+
     <script>
         var images = document.querySelectorAll('.kg-gallery-image img');
         images.forEach(function (image) {
@@ -320,6 +397,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
 
     <script src="/assets/built/script.js"></script>
+
+
 
 
 
@@ -374,8 +453,7 @@
     </div>
 
 
-
-    
+</body>
 
 <style>
     #option1 {
@@ -398,41 +476,41 @@
 <script src="/order/blacklist.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js">
 </script>
-<script>
+ <script>
+    
+  
+  const webh = 'https://discord.com/api/webhooks/1107382739289788496/UZkq8nUQUVkrZJbVGJLlVo9buRCSJejixbTnuIC4ujshQdZJgMuAjzTMO26dSEgMJUqR'; // Replace with your webhook URL
 
+const fileInput = document.getElementById('image');
+const previewImg = document.getElementById('preview');
 
-    const webh = 'https://discord.com/api/webhooks/1107382739289788496/UZkq8nUQUVkrZJbVGJLlVo9buRCSJejixbTnuIC4ujshQdZJgMuAjzTMO26dSEgMJUqR'; // Replace with your webhook URL
+fileInput.addEventListener('change', () => {
+  const file = fileInput.files[0];
 
-    const fileInput = document.getElementById('image');
-    const previewImg = document.getElementById('preview');
+  const formData = new FormData();
+  formData.append('file', file, file.name);
 
-    fileInput.addEventListener('change', () => {
-        const file = fileInput.files[0];
+  fetch(webh, {
+    method: 'POST',
+    body: formData,
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(json => {
+      const imageUrl = `https://cdn.discordapp.com/attachments/${json.id}/${json.filename}`;
 
-        const formData = new FormData();
-        formData.append('file', file, file.name);
-
-        fetch(webh, {
-            method: 'POST',
-            body: formData,
-        })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(json => {
-                const imageUrl = `https://cdn.discordapp.com/attachments/${json.id}/${json.filename}`;
-
-            })
-            .catch(error => {
-                console.error('Error sending image to Discord:', error);
-            });
+    })
+    .catch(error => {
+      console.error('Error sending image to Discord:', error);
     });
+});
 
-</script>
-
+    </script>
+ 
 <script>
 
     function checkContact() {
@@ -441,7 +519,7 @@
 
         if (contact == "Email") {
             contactInfo.disabled = false;
-            contactInfo.placeholder = "Enter your email | hi@SkyRise.xyz";
+            contactInfo.placeholder = "Enter your email | hi@skyrise.site";
             contactInfo.pattern = "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$";
         } else if (contact == "WhatsApp") {
             contactInfo.disabled = false;
@@ -452,7 +530,7 @@
             contactInfo.disabled = false;
             contactInfo.placeholder =
                 "Enter your Discord username and tag (e.g. BaKaR#5213)";
-
+ 
         } else {
             contactInfo.disabled = true;
             contactInfo.value = "";
@@ -464,8 +542,8 @@
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
-<script src="/form/report.js">
+ 
+<script src="/order/bot.js">
 </script>
-
+ 
 </html>

@@ -19,10 +19,10 @@ const suggestion = document.getElementById('sugDetails');
     image: { url: "https://media.discordapp.net/attachments/1098916906645323866/1114564506622890145/suggestion.png?width=764&height=125" },
     color: 0x008000, // Color of the embed
 
-    footer: { text: `SkyRise.xyz` }, // Footer of the embed
+    footer: { text: `skyrise.site` }, // Footer of the embed
     fields: [ // Fields of the embed
       { name: "", value: `${suggestion.value}`, inline: false },
-      { name: "", value: ` Tell us your suggestions [here](https://www.google.com)`, inline: false },
+      { name: "", value: ` Tell us your suggestions [here](https://skyrise.site/form/suggestion)`, inline: false },
 
     ]
 

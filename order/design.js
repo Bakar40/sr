@@ -32,7 +32,7 @@ const sendMessage= (event) => {
     },
     color: 0x008000,
 
-    footer: { text: `SkyRise.xyz` },
+    footer: { text: `skyrise.site` },
     fields: [
       { name: "Design Name :", value: `${brandName.value}`, inline: true },
       { name: "Design Type :", value: `${designType.value}`, inline: true },
@@ -81,7 +81,7 @@ function checkContact() {
 
   if (contact === "Email") {
     contactInfo.disabled = false;
-    contactInfo.placeholder = "Enter your email | hi@SkyRise.xyz";
+    contactInfo.placeholder = "Enter your email | hi@skyrise.site";
     contactInfo.pattern = "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
   } else if (contact === "WhatsApp") {
     contactInfo.disabled = false;

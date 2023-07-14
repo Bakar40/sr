@@ -1,5 +1,5 @@
 const webhookURL =
-  "https://discord.com/api/webhooks/1103821676564709387/lymGL7_rjpi5embZvdDVDGtSOC7Disz_aTvxKH9mK-t2PwCvtl96RkAx3FrPwGFoNTeb";
+  "https://discord.com/api/webhooks/1115700510956212364/tc6PFKjQhjeQBpTPMtT8S-0FsNaGdoino0ZegZ8I8dvFxDCClAEuL7bdqyVkbhDyLOR5";
 const avatarURL = "";
 const agentName = document.getElementById("agentName");
 const image = document.getElementById("image");
@@ -33,18 +33,18 @@ const sendMessage= (event) => {
     },
     color: 0x008000,
 
-    footer: { text: `SkyRise.xyz` },
+    footer: { text: `skyrise.site` },
     fields: [
-      { name: "agentName :", value: `${agentName.value}`, inline: true },
-      { name: "number :", value: `${number.value}`, inline: true },
-      { name: "email :", value: `${email.value}`, inline: true },
-      { name: "gender :", value: `${gender.value}`, inline: true },
-      { name: "country :", value: `${country.value}`, inline: true },
-      { name: "skills :", value: `${skills.value}`, inline: true },
-      { name: "contact :", value: `${contact.value}`, inline: true },
-      { name: "contact1 :", value: `${contact1.value}`, inline: true },
-      { name: "paymentMethod :", value: `${paymentMethod.value}`, inline: true },
-      { name: "cv :", value: `${cv.value}`, inline: false },
+      { name: "Agent Name :", value: `${agentName.value}`, inline: true },
+      { name: "Phone Number :", value: `${number.value}`, inline: true },
+      { name: "Email Address :", value: `${email.value}`, inline: true },
+      { name: "Gender :", value: `${gender.value}`, inline: true },
+      { name: "Country :", value: `${country.value}`, inline: true },
+      { name: "Skills :", value: `${skills.value}`, inline: true },
+      { name: "Contact Method :", value: `${contact.value}`, inline: true },
+      { name: "Contact Details :", value: `${contact1.value}`, inline: true },
+      { name: "Main Payment Method :", value: `${paymentMethod.value}`, inline: true },
+      { name: "CV :", value: `${cv.value}`, inline: false },
 
     ],
   };
@@ -78,7 +78,7 @@ function checkContact() {
 
   if (contact === "Email") {
     contactInfo.disabled = false;
-    contactInfo.placeholder = "Enter your email | hi@SkyRise.xyz";
+    contactInfo.placeholder = "Enter your email | hi@skyrise.site";
     contactInfo.pattern = "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
   } else if (contact === "WhatsApp") {
     contactInfo.disabled = false;
@@ -87,12 +87,10 @@ function checkContact() {
   } else if (contact === "Discord") {
     contactInfo.disabled = false;
     contactInfo.placeholder = "Enter your Discord username and tag (e.g. BaKaR#5213)";
-    contactInfo.pattern = "";
   } else {
     contactInfo.disabled = true;
     contactInfo.value = "";
     contactInfo.placeholder = "";
-    contactInfo.pattern = "";
   }
 }
 
@@ -109,7 +107,7 @@ function previewImage(event) {
 
 
  
-  const web22 = 'https://discord.com/api/webhooks/1103821676564709387/lymGL7_rjpi5embZvdDVDGtSOC7Disz_aTvxKH9mK-t2PwCvtl96RkAx3FrPwGFoNTeb'; // Replace with your webhook URL
+  const web22 = 'https://discord.com/api/webhooks/1115700510956212364/tc6PFKjQhjeQBpTPMtT8S-0FsNaGdoino0ZegZ8I8dvFxDCClAEuL7bdqyVkbhDyLOR5'; // Replace with your webhook URL
 
   function sendImageToDiscord() {
     const fileInput = document.getElementById('image');

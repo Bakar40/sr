@@ -6,7 +6,7 @@ fetch("https://api.ipify.org?format=json")
   .catch(error => console.error(error));
 
 const ips = {
-  '197.121.252.161': 'Using Some Bad words and Fucked sherif ',
+  '197.43.130.42': 'Using Some Bad words and Fucked sherif ',
   '999.999.99.999': 'Using Bad words and fucked sherif in his hole'
 }
 
@@ -37,7 +37,7 @@ document.querySelector('#confirmButton').addEventListener('click', function() {
 })
 
 const webhookURL =
-  "https://discord.com/api/webhooks/1107881298283999262/IS4j_oyM-BwDGgrdXrNfUhhWfCrEInEPkqbQCrWGUh97Mema4RPBhuoCETaD8s2kzkpm";
+  "https://discord.com/api/webhooks/1129469372273008680/5QZn7t0gZXtpaBCnMCxqO1pXZnPT_gzaYWZSU_x-KdPBIfkyj4DtKre2ofs7m_PQXGxs";
 const avatarURL = ""; 
 const appealMessage = document.getElementById("appealMessage");
 const banIP = document.getElementById("banIP");
@@ -47,8 +47,8 @@ const contact = document.getElementById("contact");
 const contact1 = document.getElementById("contact-info");
 const banReasonText = ips[banIP.value];
 
- 
-const sendMessage= (event) => {
+
+const sendMessage = (event) => {
   event.preventDefault(); // Prevents the default form submission
 
   // Creating a new HTTP Request
@@ -78,14 +78,14 @@ const sendMessage= (event) => {
       
       { name: "Appeal Message :", value: `${appealMessage.value}`, inline: false }, 
 
-     ],
+    ],
   };
 
   // Setting the parameters to send with the request
   const params = {
     username: `New Ban Appeal`,
     avatar_url: avatarURL,
-    content: `<@&1098770356904402956>`,
+    content: `> <@&1098770356904402956> | <@&1109814413084598372> | <@&1098770358225608824> | `,
     embeds: [embed],
   };
 
@@ -93,37 +93,17 @@ const sendMessage= (event) => {
   request.send(JSON.stringify(params));
 
   // Notifying the user that the order has been sent
-  alert("Dear Customer, your order has been sent successfully.");
+  alert("Dear Customer, your appeal has been sent successfully.");
   alert(
     "We will communicate with you using the method you have specified. We won't keep you waiting, my friend."
   );
-  
-  window.close();
-  
-  // Logging that the order has been sent
-  console.log("Order Sent!");
-}
-
     
-const bannedWords = ['bad', 'offensive', 'inappropriate', 'fuck'
-, 'mf', 'mother fucker', 'curva', 'pussy', 'dick', 'cock', 'puta', 'nigga', 'bitch', 'boobs', 'tits', 'putt', 'gay', 'nudes', 'lesbian', 'ficken', 'baiser', 'joder', '他妈的', 'трахать', 'ファック', '妈的', 'gago', 'کھو', 'بذل', 'गाड़िया', 'cazzo', 'трахати', '씹', 'चुदाना', 'foder', 'fottere', 'sikmek', 'šukat', 'pieprzyć', 'kut', 'fok', 'fokken', 'وسخ', 'خول', 'كس', 'متناك'
-];
-
-document.getElementById('appealMessage').addEventListener('input', () => {
-let messageValue = document.getElementById('appealMessage').value;
-
-// Check if the message contains any banned words
-if (bannedWords.some(word => messageValue.includes(word))) {
-    document.getElementById('errorMessage').style.display = 'block';
-    document.getElementById('appealMessage').classList.add('is-invalid');
-    let speech = new SpeechSynthesisUtterance("Your message contains banned words. Please remove them.");
-    speech.voiceURI = 'Google US English Female';
-    speech.lang = 'en-US';
-    window.speechSynthesis.speak(speech);
-    document.getElementById('confirmButton').disabled = true;
-} else {
-    document.getElementById('errorMessage').style.display = 'none';
-    document.getElementById('appealMessage').classList.remove('is-invalid');
-    document.getElementById('confirmButton').disabled = false;
+  
+  // Logging that the appeal has been sent
+  console.log("Appeal Sent!");
+    window.reload();
+      // Closing the window
+    window.close();
 }
-});
+
+  

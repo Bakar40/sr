@@ -319,68 +319,7 @@ We will redirect you to our store page in <b><span id="countdown"></span> second
   
     
 
-    
-<script>
-        const webhookURL = "https://discord.com/api/webhooks/1098407535347765299/stwiF6OlAt8yscjDUGobveHqjEum_nt38gLw0s2xov3-dLR1jCWEJVThkBFmEEsM8UWk"
-        const avatarURL = ""
-        // Getting the elements from the HTML page
-        const botName = document.getElementById('botName')
-        const userID = document.getElementById('userID')
-        const botType = document.getElementById('botType')
-        const email = document.getElementById('email')
-        const num = document.getElementById('num')
-        const botAvatar = document.getElementById('botAvatar')
-        const botDetails = document.getElementById('botDetails')
-        const paymentMethod = document.getElementById('paymentMethod')
 
-        const deadline = document.getElementById('deadline')
-
-        function sendMessage() { // After submitting the form.
-            var request = new XMLHttpRequest() // Creates a new XML Http Request
-            request.open("POST", webhookURL) // Opens a new HTTP Request to the webhook URL
-            request.setRequestHeader('Content-type', 'application/json') // Sets the request Type
-
-            var embed = { // Embed to send.
-                author: { name: `${name.value}'s Apllication` }, // Author of the embed
-                title: "New Bot Order", // Title of the embed
-                timestamp: new Date(), // Footer Timestamp of the embed
-                image: { url: "https://cdn.discordapp.com/attachments/1091474465642270840/1092246376945045574/New_Project_195_182C46A.png" },
-                color: 0x008000, // Color of the embed
-                footer: { text: `SkyRise .site | User ID: ${(userID.value).toString()}` }, // Footer of the embed
-                fields: [ // Fields of the embed
-                    { name: "Bot Name", value: `${botName.value}`, inline: true },
-                    /*{ name: "age", value: `${(age.value).toString()}`, inline: true },*/
-                    { name: "Email", value: `${email.value}`, inline: true },
-
-                    { name: "Number", value: `${num.value}`, inline: true },
-                    { name: "UserID", value: `${(userID.value).toString()}`, inline: false },
-                    { name: "Bot Type", value: `${(botType.value).toString()}`, inline: true },
-                    
-                    { name: "Avatar", value: `${botAvatar.value}`, inline: false },
-                    { name: "Method", value: `${paymentMethod.value}`, inline: false },
-                    { name: "Duration", value: `${deadline.value}`, inline: false },
-                    { name: "WhatsApp", value: `[Click here](https://wa.me/${num.value})`, inline: false },
-                    { name: "Profile", value: `[Click here](https://discord.com/users/${userID.value})`, inline: false },
-                    { name: "Details", value: `${botDetails.value}`, inline: false },
-
-                ]
-
-            }
-
-            var params = { // Parameters to send the request
-                name: `New Bot Order `, // Name of the webhook
-                avatar_url: avatarURL,
-                content: `<@&1098410893223665744>`,// PFP URL of the webhook
-                embeds: [embed] // Embeds to send with the webhook
-
-            }
-
-            request.send(JSON.stringify(params)) // Sends the request 
-            alert(` Dear ${nameInfo.value} , Your agent request had been sent successfully`)
-            console.log('Ban Appeal Sent!') // Logs that the appeal had beensent. (For DEVELOPMENT purposes)
-        }
-       
-    </script>
  
  
 </script>

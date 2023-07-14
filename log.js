@@ -46,7 +46,7 @@ async function sendMessageToDiscord() {
         body: JSON.stringify(data)
       });
       console.log("Message sent to Discord");
-      window.location.href = "/appeal/form.html";
+      window.location.href = "/appeal/form";
     } catch (error) {
       console.error(error);
     }

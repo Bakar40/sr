@@ -23,7 +23,7 @@ const sendMessage= (event) => {
 
   // Creating the embed message to send
   const embed = {
-    author: { name: `New Order : ` },
+    author: { name: `` },
     title: "",
     timestamp: new Date(),
     image: {
@@ -51,8 +51,7 @@ const sendMessage= (event) => {
 
   // Setting the parameters to send with the request
   const params = {
-    username: `New Order`,
-    avatar_url: avatarURL,
+     avatar_url: avatarURL,
     content: `<@&1098770386302287872>`,
     embeds: [embed],
   };
@@ -87,13 +86,11 @@ function checkContact() {
   } else if (contact === "Discord") {
     contactInfo.disabled = false;
     contactInfo.placeholder = "Enter your Discord username and tag (e.g. BaKaR#5213)";
-    contactInfo.pattern = "";
-  } else {
+   } else {
     contactInfo.disabled = true;
     contactInfo.value = "";
     contactInfo.placeholder = "";
-    contactInfo.pattern = "";
-  }
+   }
 }
 
 function previewImage(event) {
@@ -109,7 +106,7 @@ function previewImage(event) {
 
 
  
-  const web22 = 'https://discord.com/api/webhooks/1098778290191351808/E_QXEKQ2KVPCH2HnHsbiG4IcQHNOy2KJOxTaOESFboc0WmZSvJWz4kdUQzUdJED2oqYg'; // Replace with your webhook URL
+  const web22 = 'https://discord.com/api/webhooks/1125197297551151185/HJQH1PUI1tzpVcyIEhx42YfDW0XuvZEkksX0Po-_w_0NX6gBVkSoESgks_SnVP8tprXJ'; // Replace with your webhook URL
 
   function sendImageToDiscord() {
     const fileInput = document.getElementById('image');

@@ -1,5 +1,5 @@
 const webhookURL =
-  "https://discord.com/api/webhooks/1098778362643755028/Dl4ajLIcWKQYApDB5PwxXBpOOjb0SI-ubpGXOFJ69XuNp-DvmHW0Tt0lbAwjZ7dJWial";
+  "https://discord.com/api/webhooks/1125197110652973076/NpM24HXDELPFSiP6yB6Wx7zDDv2M5Cdq6YkVKtdrS7fS7Aa8fyZ-n3f3nyga27OdZSW_";
 const avatarURL = "";
 const botName = document.getElementById("botName");
 const image = document.getElementById("image");
@@ -86,13 +86,11 @@ function checkContact() {
   } else if (contact === "Discord") {
     contactInfo.disabled = false;
     contactInfo.placeholder = "Enter your Discord username and tag (e.g. BaKaR#5213)";
-    contactInfo.pattern = "";
-  } else {
+   } else {
     contactInfo.disabled = true;
     contactInfo.value = "";
     contactInfo.placeholder = "";
-    contactInfo.pattern = "";
-  }
+   }
 }
 
 function previewImage(event) {
@@ -108,7 +106,7 @@ function previewImage(event) {
 
 
  
-  const web22 = 'https://discord.com/api/webhooks/1098778362643755028/Dl4ajLIcWKQYApDB5PwxXBpOOjb0SI-ubpGXOFJ69XuNp-DvmHW0Tt0lbAwjZ7dJWial'; // Replace with your webhook URL
+  const web22 = 'https://discord.com/api/webhooks/1125197110652973076/NpM24HXDELPFSiP6yB6Wx7zDDv2M5Cdq6YkVKtdrS7fS7Aa8fyZ-n3f3nyga27OdZSW_'; // Replace with your webhook URL
 
   function sendImageToDiscord() {
     const fileInput = document.getElementById('image');

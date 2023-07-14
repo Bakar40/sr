@@ -445,40 +445,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js">
 </script>
  
-<script>
 
-
-    const webh = 'https://discord.com/api/webhooks/1107382739289788496/UZkq8nUQUVkrZJbVGJLlVo9buRCSJejixbTnuIC4ujshQdZJgMuAjzTMO26dSEgMJUqR'; // Replace with your webhook URL
-
-    const fileInput = document.getElementById('image');
-    const previewImg = document.getElementById('preview');
-
-    fileInput.addEventListener('change', () => {
-        const file = fileInput.files[0];
-
-        const formData = new FormData();
-        formData.append('file', file, file.name);
-
-        fetch(webh, {
-            method: 'POST',
-            body: formData,
-        })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(json => {
-                const imageUrl = `https://cdn.discordapp.com/attachments/${json.id}/${json.filename}`;
-
-            })
-            .catch(error => {
-                console.error('Error sending image to Discord:', error);
-            });
-    });
-
-</script>
 
 <script>
 
@@ -504,7 +471,7 @@
             contactInfo.disabled = true;
             contactInfo.value = "";
             contactInfo.placeholder = "";
-            contactInfo.pattern = "";
+        
         }
     }
 

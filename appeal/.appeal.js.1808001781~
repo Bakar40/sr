@@ -1,0 +1,39 @@
+fetch("https://api.ipify.org?format=json")
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById("banIP").value = data.ip;
+  })
+  .catch(error => console.error(error));
+
+const ips = {
+  '197.43.130.42': 'Using Some Bad words and Fucked sherif ',
+  '999.999.99.999': 'Using Bad words and fucked sherif in his hole'
+}
+
+const banReason = document.getElementById('banReason');
+
+document.querySelector('#banIP').addEventListener('input', function(e) {
+  const ip = e.target.value
+  e.target.value = ips[ip] || ''
+  
+  if (ips[ip]) {
+    document.querySelector('#confirmButton').style.display = 'none'
+    e.target.style.color = 'white'
+  }
+})
+
+document.querySelector('#confirmButton').addEventListener('click', function() {
+  const ip = document.querySelector('#banIP').value
+  if (ips[ip]) {
+    document.querySelector('#confirmButton').style.display = 'none'
+    document.querySelector('#banIP').style.display = 'block'
+    document.querySelector('#banIP').style.width = '200px'
+    document.querySelector('#banReason').style.color = 'white'
+    document.querySelector('#banReason').textContent = ips[ip]
+    document.querySelector('#banReason').style.display = 'inline-block'
+  } else {
+    alert("This IP doesn't banned !")
+  }
+})
+
+

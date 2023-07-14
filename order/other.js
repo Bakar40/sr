@@ -39,8 +39,7 @@ const sendMessage= (event) => {
 
   // Setting the parameters to send with the request
   const params = {
-    username: `New Order`,
-    avatar_url: avatarURL,
+     avatar_url: avatarURL,
     content: `<@&1098770386302287872>`,
     embeds: [embed],
   };
@@ -75,12 +74,10 @@ function checkContact() {
   } else if (contact === "Discord") {
     contactInfo.disabled = false;
     contactInfo.placeholder = "Enter your Discord username and tag (e.g. BaKaR#5213)";
-    contactInfo.pattern = "";
-  } else {
+   } else {
     contactInfo.disabled = true;
     contactInfo.value = "";
     contactInfo.placeholder = "";
-    contactInfo.pattern = "";
-  }
+   }
 }
   
